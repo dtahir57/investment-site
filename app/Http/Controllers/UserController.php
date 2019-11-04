@@ -1,11 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+use Session;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.user.index');
+        $users=User::all();
+        return view('admin.user.index',compact('users'));
     }
 
     /**
@@ -23,7 +32,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        $roles=Role::all();
+        return view('admin.user.create',compact('roles'));
     }
 
     /**
@@ -32,9 +42,26 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        
+        $users=new User;
+        $users->name = $request->name;
+        $users->email =  $request->email;
+        $users->username= $request->username;
+        $users->phone= $request->phone;
+        $users->password = Hash::make($request->password);
+       
+        $users->save();
+        foreach($request->roles as $role)
+        {
+            $users->assignRole($role);
+        }
+        if($users)
+        {
+            Session::flash('created','User Created Successfully');
+            return redirect()->route('user.index');
+        }
     }
 
     /**
@@ -56,7 +83,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user=User::find($id);
+        $roles=Role::all();
+        return view('admin.user.edit',compact('user','roles'));
     }
 
     /**
@@ -66,9 +95,22 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request,$id)
     {
-        //
+        $users=User::find($id);
+        $users->name = $request->name;
+        $users->email =  $request->email;
+        $users->username= $request->username;
+        $users->phone= $request->phone;
+        $users->password = Hash::make( $request->password);
+        $users->update();
+        $users->syncRoles($request->roles);
+        
+        if($users)
+        {
+            Session::flash('updated','User Updated Successfully');
+            return redirect()->route('user.index');
+        }
     }
 
     /**
@@ -79,6 +121,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user=User::find($id);
+        $user->delete();
+        if($user)
+        {
+            Session::flash('deleted','User Deleted Successfully');
+            return redirect()->route('user.index');
+        }
     }
 }

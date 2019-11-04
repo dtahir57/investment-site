@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use App\Http\Requests\RoleRequest;
+use Session;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return view('admin.role.index');
+        $roles=Role::all();
+        return view('admin.role.index',compact('roles'));
     }
 
     /**
@@ -23,7 +32,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('admin.role.create');
+        $permissions=Permission::all();
+        return view('admin.role.create',compact('permissions'));
     }
 
     /**
@@ -32,9 +42,17 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoleRequest $request)
     {
-        //
+        $roles=new Role;
+        $roles->name=$request->name;
+        $roles->save();
+        $roles->givePermissionTo($request->permissions);
+        if($roles)
+        {
+            Session::flash('created','Role Created Successfully');
+            return redirect()->route('role.index');
+        }
     }
 
     /**
@@ -56,7 +74,9 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $role=Role::find($id);
+        $permissions=Permission::all();
+        return view('admin.role.edit',compact('role','permissions'));
     }
 
     /**
@@ -66,9 +86,17 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RoleRequest $request, $id)
     {
-        //
+        $role=Role::find($id);
+        $role->name=$request->name;
+        $role->update();
+        $role->syncPermissions($request->permissions);
+        if($role)
+        {
+            Session::flash('updated','Role Updated Successfully');
+            return redirect()->route('role.index');
+        }
     }
 
     /**
@@ -79,6 +107,12 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $role=Role::find($id);
+        $role->delete();
+        if($role)
+        {
+            Session::flash('deleted','Role Deleted Successfully');
+             return redirect()->route('role.index');
+        }
     }
 }

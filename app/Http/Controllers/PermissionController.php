@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
+use App\Http\Requests\PermissionRequest;
+use Session;
 
 class PermissionController extends Controller
 {
+
+    public function __construct()
+    {
+         $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -34,13 +41,14 @@ class PermissionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PermissionRequest $request)
     {
         $permission=new Permission;
         $permission->name=$request->name;
         $save=$permission->save();
         if($save)
         {
+            Session::flash('created','Permission Created Successfully');
             return redirect()->route('permission.index');
         }
     }
@@ -64,7 +72,8 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $permission=Permission::find($id);
+        return view('admin.permission.edit',compact('permission'));
     }
 
     /**
@@ -74,9 +83,16 @@ class PermissionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PermissionRequest $request, $id)
     {
-        //
+        $permission=Permission::find($id);
+        $permission->name=$request->name;
+       $permission->update();
+        if($permission)
+        {
+            Session::flash('updated','Permission Updated Successfully');
+            return redirect()->route('permission.index');
+        }
     }
 
     /**
@@ -87,6 +103,12 @@ class PermissionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $permission=Permission::find($id);
+        $permission->delete();
+        if($permission)
+        {
+            Session::flash('deleted','Permission Deleted Successfully');
+            return redirect()->route('permission.index');
+        }
     }
 }

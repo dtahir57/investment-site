@@ -1,42 +1,39 @@
 @extends('layouts.admin_app')
 @section('title','User')
 @section('content')
- <!-- Horizontal Form -->
- <div class="">
- <section class="content-header ">
+<section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-md-12">
             <a href="{{route('user.index')}}" role="button" class="btn btn-success float-right">Show All</a>
         </div>
           <div class="col-md-6">
-            <h1>Create User</h1>
+            <h1>Edit User</h1>
           </div>
           
           <div class="col-md-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
               <li class="breadcrumb-item"><a href="{{route('user.index')}}">User</a></li>
-              <li class="breadcrumb-item active">Create User</li>
+              <li class="breadcrumb-item active">Edit User</li>
             </ol>
           </div>
         
-     
+      </div><!-- /.container-fluid -->
     </section>
+
     <section class="content">
       <div class="row">
         <div class="col-12">
           <div class="card">
-           
-            <div class="card-body">
-            <form method="POST" action="{{ route('user.store') }}">
+          <form method="POST" action="{{ route('user.update',$user->id) }}">
                         @csrf
-                       
+                        @method('PATCH')
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" value="{{$user->name}}" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 <span>
                                      @error('name')
                                      <strong>{{$message}}</strong>
@@ -50,7 +47,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                <input id="username" type="text"  value="{{$user->username}}" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
                                 <span>
                                      @error('username')
                                      <strong>{{$message}}</strong>
@@ -65,7 +62,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+                                <input id="phone" type="text"  value="{{$user->phone}}" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
                                 <span>
                                      @error('phone')
                                      <strong>{{$message}}</strong>
@@ -79,7 +76,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email"  value="{{$user->email}}"class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                                 <span>
                                      @error('email')
                                      <strong>{{$message}}</strong>
@@ -137,8 +134,8 @@
                         
 
                     </form>
-            </div>
-            <!-- /.card-body -->
+
+            
           </div>
           <!-- /.card -->
         </div>

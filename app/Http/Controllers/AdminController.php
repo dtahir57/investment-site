@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('auth');
+         $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        return view('home');
     }
 
     /**

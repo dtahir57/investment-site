@@ -1,38 +1,39 @@
 @extends('layouts.admin_app')
-@section('title', 'Role')
+@section('title','Role')
 @section('content')
- <!-- Content Header (Page header) -->
- <section class="content-header">
+<section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-md-12">
             <a href="{{route('role.index')}}" role="button" class="btn btn-success float-right">Show All</a>
         </div>
           <div class="col-md-6">
-            <h1>Create Role</h1>
+            <h1>Edit Role</h1>
           </div>
           
           <div class="col-md-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
               <li class="breadcrumb-item"><a href="{{route('role.index')}}">Role</a></li>
-              <li class="breadcrumb-item active">Create Role</li>
+              <li class="breadcrumb-item active">Edit Role</li>
             </ol>
           </div>
+        
+      </div><!-- /.container-fluid -->
     </section>
 
-    </section>
     <section class="content">
       <div class="row">
         <div class="col-12">
           <div class="card">
-        <form class="form-horizontal" action="{{route('role.store')}}" method="POST">
-            @csrf
+<form class="form-horizontal" action="{{route('role.update',$role->id)}}" method="POST">
+@csrf
+@method('PATCH')
                 <div class="card-body">
                   <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control" id="name" placeholder="Role Name" name="name">
+                      <input type="text" class="form-control" id="name" value={{$role->name}} name="name">
                       <span >
                       @error('name')
                       <strong>{{$message}}</strong>
@@ -40,8 +41,7 @@
                       </span>
                     </div>
                   </div>
-                </div>
-                    <h4>Assign Permission | Please Choose at least one Permission</h4>
+                  <h4>Assign Permission | Please Choose at least one Permission</h4>
                             <hr>
                     <div class="card-block">
                     <div class="input-group skin skin-square">
@@ -56,18 +56,15 @@
                        
                     </div>
                     </div>
-                
-                 
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-info">Add Role</button>
+                  <button type="submit" class="btn btn-info">Edit Role</button>
                   
                 </div>
                 <!-- /.card-footer -->
-        </form>
+              </form>
 
-        </div>
-            <!-- /.card-body -->
+            
           </div>
           <!-- /.card -->
         </div>

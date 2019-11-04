@@ -38,6 +38,15 @@
               <h3 class="card-title">Pesmission List</h3>
             </div>
             <!-- /.card-header -->
+            @if(session('created'))
+               <li class="alert alert-success">{{ session('created') }}</li>
+            @endif
+            @if(session('updated'))
+               <li class="alert alert-success">{{ session('updated') }}</li>
+            @endif
+            @if(session('deleted'))
+               <li class="alert alert-success">{{ session('deleted') }}</li>
+            @endif
             <div class="card-body">
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
@@ -52,13 +61,14 @@
                 <tbody>
                 @foreach($permissions as $permission )
                 <tr>
-                  <td>{{$permission->id}}</td>
+                  <td>{{$loop->index+1}}</td>
                   <td>{{$permission->name}}</td>
                   <td>{{$permission->created_at}}</td>
                   
                   <td>
-                  <a href="" type="button" class="btn btn-sm btn-success">Edit</a>
-                  <a href="" type="button" class="btn btn-sm btn-danger">Delete</a>
+                  <a href="{{route('permission.edit',$permission->id)}}" type="button" class="btn btn-sm btn-success">Edit</a>
+                  <button type="button"  class="btn btn-danger remove-record btn-sm" data-toggle="modal" data-target="#modal-danger"
+                  data-url="{{route('permission.destroy',$permission->id)}}" data-id="{{$permission->id}}">Delete</button>
                   </td>
                 </tr>
                 @endforeach
@@ -74,17 +84,35 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
- 
+  
+   <form class="form" method="post">
+  @csrf
+  @method('DELETE')
+   <div class="modal fade" id="modal-danger">
+        <div class="modal-dialog">
+          <div class="modal-content bg-danger">
+            <div class="modal-header">
+              <h4 class="modal-title">Delete Permission</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">x</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure,You want to delete permission?</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-outline-light remove-form-data" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-outline-light">Delete</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
+   </form>
+ 
 
 
 @endsection
@@ -92,6 +120,9 @@
 <script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
 <script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 <script src="{{asset('dist/js/demo.js')}}"></script>
+
+<script src="{{ asset('js/custom.js') }}"></script>
+
 <script>
   $(function () {
     $("#example1").DataTable();
