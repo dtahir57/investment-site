@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\UserManagement;
+use App\Http\Controllers\Controller;
 use App\User;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
@@ -12,7 +13,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['role:Super_User']);
     }
     /**
      * Display a listing of the resource.
@@ -22,7 +23,7 @@ class UserController extends Controller
     public function index()
     {
         $users=User::all();
-        return view('admin.user.index',compact('users'));
+        return view('admin.UserManagement.user.index',compact('users'));
     }
 
     /**
@@ -33,7 +34,7 @@ class UserController extends Controller
     public function create()
     {
         $roles=Role::all();
-        return view('admin.user.create',compact('roles'));
+        return view('admin.UserManagement.user.create',compact('roles'));
     }
 
     /**
@@ -85,7 +86,7 @@ class UserController extends Controller
     {
         $user=User::find($id);
         $roles=Role::all();
-        return view('admin.user.edit',compact('user','roles'));
+        return view('admin.UserManagement.user.edit',compact('user','roles'));
     }
 
     /**
@@ -95,14 +96,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request,$id)
+    public function update(Request $request,$id)
     {
         $users=User::find($id);
         $users->name = $request->name;
         $users->email =  $request->email;
         $users->username= $request->username;
         $users->phone= $request->phone;
-        $users->password = Hash::make( $request->password);
         $users->update();
         $users->syncRoles($request->roles);
         

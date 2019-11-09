@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\UserManagement;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -12,7 +12,7 @@ class RoleController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['role:Super_User']);
     }
     /**
      * Display a listing of the resource.
@@ -22,7 +22,7 @@ class RoleController extends Controller
     public function index()
     {
         $roles=Role::all();
-        return view('admin.role.index',compact('roles'));
+        return view('admin.UserManagement.role.index',compact('roles'));
     }
 
     /**
@@ -33,7 +33,7 @@ class RoleController extends Controller
     public function create()
     {
         $permissions=Permission::all();
-        return view('admin.role.create',compact('permissions'));
+        return view('admin.UserManagement.role.create',compact('permissions'));
     }
 
     /**
@@ -76,7 +76,7 @@ class RoleController extends Controller
     {
         $role=Role::find($id);
         $permissions=Permission::all();
-        return view('admin.role.edit',compact('role','permissions'));
+        return view('admin.UserManagement.role.edit',compact('role','permissions'));
     }
 
     /**

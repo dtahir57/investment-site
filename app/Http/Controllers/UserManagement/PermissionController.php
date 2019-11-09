@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\UserManagement;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use App\Http\Requests\PermissionRequest;
@@ -12,7 +12,7 @@ class PermissionController extends Controller
 
     public function __construct()
     {
-         $this->middleware('auth');
+         $this->middleware(['role:Super_User', 'auth']);
     }
     /**
      * Display a listing of the resource.
@@ -22,7 +22,7 @@ class PermissionController extends Controller
     public function index()
     {
         $permissions=Permission::all();
-        return view('admin.permission.index',compact('permissions'));
+        return view('admin.UserManagement.permission.index',compact('permissions'));
     }
 
     /**
@@ -32,7 +32,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        return view('admin.permission.create');
+        return view('admin.UserManagement.permission.create');
     }
 
     /**
@@ -73,7 +73,7 @@ class PermissionController extends Controller
     public function edit($id)
     {
         $permission=Permission::find($id);
-        return view('admin.permission.edit',compact('permission'));
+        return view('admin.UserManagement.permission.edit',compact('permission'));
     }
 
     /**

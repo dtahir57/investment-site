@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -28,7 +29,24 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        if (Auth::user()->hasRole('Super_User'))
+        {
+            return '/home';
+        } else {
+            return '/Frontend/home';
+        }
+    }
+    // public function authenticated($request, $user)
+    // {
+    //     if ($user->role == 'Super_User') {
+    //         return redirect()->route('home');
+    //     } else {
+    //         return redirect()->route('user.dashboard');
+    //     }
+    // }
 
     /**
      * Create a new controller instance.

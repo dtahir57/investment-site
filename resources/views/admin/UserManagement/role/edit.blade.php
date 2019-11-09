@@ -48,7 +48,7 @@
                         @foreach($permissions as $permission)
                         <div class="col-lg-3 col-md-4 col-sm-6">
                           <fieldset>
-                          <input  type="checkbox" name="permissions[]" value="{{$permission->name}}">
+                          <input  type="checkbox" name="permissions[]" value="{{$permission->name}}" @if($role->hasPermissionTo($permission->name)) checked @endif>
                           <label for="permission">{{$permission->name}}</label>
                           </fieldset>
                         </div>
