@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Models\Package;
 use Illuminate\Http\Request;
-use App\Package;
 
 class PackageController extends Controller
 {
@@ -18,7 +18,8 @@ class PackageController extends Controller
      */
     public function index()
     {
-        return view('admin.package.index');
+        $packages = Package::latest()->get();
+        return view('admin.package.index', compact('packages'));
     }
 
     /**

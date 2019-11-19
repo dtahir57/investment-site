@@ -1,73 +1,84 @@
-@extends('layouts.app')
-
+@extends('layouts.front_end')
+@section('title','Investment Site')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-               
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<section id="top_banner">
+        <div class="banner">
+            <div class="inner text-center">
+                <h2>Lorem ipsum dolor sit amet</h2>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+
+
+
+    <section id="login-reg">
+        <div class="container">
+            <!-- Top content -->
+            <div class="row">
+                <div class="col-md-6 col-sm-12 forms-right-icons">
+                    <div class="section-heading">
+                        <h2>Sign In With <span>Us</span></h2>
+                        <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 icon"><i class="fa fa-bullhorn"></i></div>
+                        <div class="col-xs-10 datablock">
+                            <h4>Powerful Features</h4>
+                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 icon"><i class="fa fa-support"></i></div>
+                        <div class="col-xs-10 datablock">
+                            <h4>Customer Support</h4>
+                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-sm-12">
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Login to our site</h3>
+                                <p>Enter username and password to log on:</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-key"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-bottom">
+                            <form role="form" action="{{route('login')}}" class="login-form" method="POST">
+                            @csrf
+                                <div class="input-group form-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+                                <div class="input-group form-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock"></i></span>
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+                                <button type="submit" class="btn">Sign in!</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+
+                   
+                </div>
+
+    </section>
 @endsection

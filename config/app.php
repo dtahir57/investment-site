@@ -123,6 +123,9 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'coinbase_api_key' => env('COINBASE_API_KEY'),
+    
+    'coinbase_secret_key' => env('COINBASE_API_SECRET'),
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

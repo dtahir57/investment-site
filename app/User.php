@@ -40,8 +40,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function packages()
+    public function package()
     {
-        return $this->hasMany(Package::class);
+        return $this->hasOne(Package::class);
     }
 }

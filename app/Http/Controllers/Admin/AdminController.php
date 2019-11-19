@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-         $this->middleware('auth');
+         $this->middleware(['role:Super_User', 'auth']);
     }
     /**
      * Display a listing of the resource.

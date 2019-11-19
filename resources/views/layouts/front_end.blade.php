@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('frontend/scss/main.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/scss/skin.css')}}">
-    @yield('style')  
+    @yield('style')
+    <style type="text/css">
+        .dropdown-item {
+            display: block;
+            height: 40px;
+            padding: 0px;
+            line-height: 0px;
+            padding: 15px;
+        }
+    </style>
 </head>
 <body id="wrapper">
     <header>
@@ -17,13 +26,14 @@
                 <div class="row">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			  </button>
-                        <a class="navbar-brand" href="#">
-                            <h1>Aspire</h1><span>Software Solutions</span></a>
+        				<span class="sr-only">Toggle navigation</span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        			  </button>
+                        <a class="navbar-brand" href="{{ ('/') }}">
+                            <img src="{{ asset('img/logo.png') }}" style="width: 70px; height: auto;">
+                        </a>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse navbar-right">
                         <ul class="nav navbar-nav">
@@ -33,8 +43,8 @@
                             <li class="nav-link {{(Request::is('about') ? 'active' : '')}}"><a href="{{route('about')}}">About</a></li>
                             
                             @guest
-                            <li class="nav-link {{(Request::is('sign_in') ? 'active' : '')}}"><a href="{{route('sign_in')}}">Sign In</a></li>
-                            <li class="nav-link {{(Request::is('sign_up') ? 'active' : '')}}"><a href="{{route('sign_up')}}">Sign Up</a></li>
+                            <li class="nav-link {{(Request::is('login') ? 'active' : '')}}"><a href="{{route('login')}}">Sign In</a></li>
+                            <li class="nav-link {{(Request::is('register') ? 'active' : '')}}"><a href="{{route('register')}}">Sign Up</a></li>
                             @else 
                              <li class="nav-item dropdown">
                                 <a id="navbarDropdown"  class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -42,18 +52,16 @@
                                 </a>
 
                                 <div class="dropdown-menu "  aria-labelledby="navbarDropdown" >
-                                <a class="dropdown-item " href="{{route('logout')}}" >
-                                {{ __('Dashboard') }}   
-                                </a>
-                                
-                                <a class="dropdown-item" href="{{route('logout')}}">
-                                {{ __('Profile') }}  
-                                </a>
-                                &nbsp&nbsp
-
-                                <a class="dropdown-item" href="{{route('logout')}}">
-                                {{ __('Setting') }}  
-                                </a>
+                                    <a class="dropdown-item " href="{{route('user.dashboard')}}" >
+                                    {{ __('Dashboard') }}   
+                                    </a>
+                                    
+                                    <a class="dropdown-item" href="#">
+                                    {{ __('Profile') }}  
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                    {{ __('Setting') }}  
+                                    </a>
                                 
                                 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
