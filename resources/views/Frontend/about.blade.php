@@ -1,10 +1,10 @@
 @extends('layouts.front_end')
-@section('title','Investment Site')
+@section('title','Forexzone | About Us')
 @section('content')
 <section id="top_banner">
         <div class="banner">
             <div class="inner text-center">
-                <h2>Lorem ipsum dolor sit amet</h2>
+                <h2>About Us</h2>
             </div>
         </div>
         <div class="page_info">
@@ -26,15 +26,19 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-7 text-align">
                     <div class="section-heading">
                         <h2>About <span>Us</span></h2>
-                        <p class="subheading">Lorem ipsum send do tempor consectetur ipsum send do tempor.</p>
+                        <p class="subheading">About FOREXZONE</p>
                     </div>
                     <p>
-                        Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh etlibura. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh
-                        etlibura. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh etlibura.
+                        FOREXZONE IS AN ONLINE INVESTMENT TRADING COMPANY WITH WIDE TRADING EXPERIENCE THAT DEALS  IN CRYPTOCURRENCIES.
+                          
 
-                        <br><br> Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh etlibura. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consec tetuer
-                        adipis elit, aliquam eget nibh etlibura.
+                        WE PROVIDE TRAINING OPPORTUNITIES TO INDIVIDUALS TO LEARN HOW TO TRADE FOR THEMSELVES IN THE FOREX AND BINARY MARKET.
 
+                        WE HAVE ORGANIZED TRADING MANAGEMENT PLATFORMS  FOR OUR INVESTORS TO EARN PROFITS AS LOW AS 15% AND HIGH AS 40% WITHIN THE DURATION OF 10 TO 30DAYS RESPECTIVELY .
+
+                        WE PROVIDE SIGNALS FOR ALL OUR ESTEEMED INVESTORS .
+
+                         WELCOME TO THE MOST LUCRATIVE TRADING PLATFORM ONLINE.
                     </p>
                     <button type="button" class="btn btn-primary slide">Learn More <i class="fa fa-caret-right"></i></button>
                 </div>
@@ -54,7 +58,7 @@
                     <div class="col-lg-12 xol-md-12 col-sm-12 col-xs-12">
                         <div class="section-heading text-center">
                             <h2>Our <span>Skills</span></h2>
-                            <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset nam nostrud euismod volumus ne mei.</p>
+                            <p class="subheading">WE HAVE BEEN KNOW AS VIRTUOSOS OF THE TRADING MARKET:  AND WITH A TRACK RECORD OF TEN YEARS EXPERIENCE, WE ARE REGARDED AS GODFATHERS IN WEALTH OPTIMIZATION. OUR SKILLS AS TRADERS ARE WORLD RENOWNED AND SECOND TO NONE FOR WE CAN GUARANTEE TRIPLE OF YOUR INVESTMENT IN THE ESTIMATED TIME STATED.</p>
                         </div>
 
 
@@ -130,7 +134,7 @@
                 <div class="col-lg-12 xol-md-12 col-sm-12 col-xs-12">
                     <div class="section-heading text-center">
                         <h1>Our <span>Team</span></h1>
-                        <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset nam nostrud euismod volumus ne mei.</p>
+                        <p class="subheading">OUR TEAM OF EXPERTS HAVE BEEN DRILLED AND GROOMED TO STAND THE TEST OF TIME AND IT"S DIFFICULTIES WHEREBY GAINING EXCELLENT RESULTS EVEN IN THE EYE OF THE STORM.</p>
                     </div>
                     <div class="wpb_column vc_column_container col-md-3 col-sm-6 col-xs-6 block mybox">
                         <div class="vc_column-inner">
@@ -138,7 +142,7 @@
                                 <div class="our-team main-info-below-image">
                                     <div class="our-team-inner">
                                         <div class="our-team-image">
-                                            <img src="{{asset('Frontend/img/team-4.jpg')}}" />
+                                            <img src="{{asset('frontend/img/team-4.jpg')}}" />
                                             <div class="qodef-circle-animate"></div>
                                             <div class="our-team-position-icon">
                                                 <span class="qodef-icon-shortcode circle">
@@ -168,7 +172,7 @@
                                 <div class="our-team main-info-below-image">
                                     <div class="our-team-inner">
                                         <div class="our-team-image">
-                                            <img src="{{asset('Frontend/img/team-4.jpg')}}" />
+                                            <img src="{{asset('frontend/img/team-4.jpg')}}" />
                                             <div class="qodef-circle-animate"></div>
                                             <div class="our-team-position-icon">
                                                 <span class="qodef-icon-shortcode circle">
@@ -198,7 +202,7 @@
                                 <div class="our-team main-info-below-image">
                                     <div class="our-team-inner">
                                         <div class="our-team-image">
-                                            <img src="{{asset('Frontend/img/team-4.jpg')}}" />
+                                            <img src="{{asset('frontend/img/team-4.jpg')}}" />
                                             <div class="qodef-circle-animate"></div>
                                             <div class="our-team-position-icon">
                                                 <span class="qodef-icon-shortcode circle">        
@@ -228,7 +232,7 @@
                                 <div class="our-team main-info-below-image">
                                     <div class="our-team-inner">
                                         <div class="our-team-image">
-                                            <img src="{{asset('Frontend/img/team-4.jpg')}}" />
+                                            <img src="{{asset('frontend/img/team-4.jpg')}}" />
                                             <div class="qodef-circle-animate"></div>
                                             <div class="our-team-position-icon">
                                                 <span class="qodef-icon-shortcode circle ">

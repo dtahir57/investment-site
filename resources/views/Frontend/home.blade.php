@@ -1,5 +1,5 @@
 @extends('layouts.front_end')
-@section('title','Investment Site')
+@section('title','Forexzone | User Dashboard')
 @section('content')
 <div class="container-fluid">
 	<div class="row">

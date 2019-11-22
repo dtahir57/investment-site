@@ -103,12 +103,10 @@
                         <h4>Useful Links</h4>
                         <hr/>
                         <ul class="footer-links">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Packages</a></li>
                             <li><a href="#">Contact</a></li>
-                            <li><a href="#">Sign In</a></li>
-                            <li><a href="#">Sign Up</a></li>
+                            <li><a href="#">About Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -160,7 +158,7 @@
                     <a href="#">Terms of Use</a>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 copyright">
-                    Developed by <a href="#">Aspire Software Solutions</a> designed by <a href="#">Designing Team</a>
+                    All rights reserved by <a href="#">Forexzone Investment Company</a>
                 </div>
             </div>
         </div>

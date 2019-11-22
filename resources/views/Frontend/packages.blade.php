@@ -1,5 +1,5 @@
 @extends('layouts.front_end')
-@section('title','Investment Site')
+@section('title','Forexzone | Packages')
 @section('content')
 <section id="features-page">
         <!--pricing-->

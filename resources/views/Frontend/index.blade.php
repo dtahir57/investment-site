@@ -1,5 +1,5 @@
 @extends('layouts.front_end')
-@section('title','Investment Site')
+@section('title','Forexzone | Home Page')
 @section('content')
 <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->
@@ -14,8 +14,8 @@
             <div class="item active">
                 <div class="fill" style="background-image:url({{asset('frontend/img/banner-slide-1.jpg')}})"></div>
                 <div class="carousel-caption slide-up">
-                    <h1 class="banner_heading">Providing The <span>Highest </span>Lorem</h1>
-                    <p class="banner_txt">Lorem ipsum dolor sit amet sit legimus copiosae instructior eiut vix denique fierentis ea saperet inimicu utqui dolor oratio mnesarchum.</p>
+                    <h1 class="banner_heading">Welcome To <span>Forexzone </span></h1>
+                    <p class="banner_txt">Forexzone is an online investment trading company with a vast trading experience in wealth optimization. Ever desired to trade in the financial market known as the forex market?.</p>
                     <div class="slider_btn">
                         <button type="button" class="btn btn-default slide">Learn More <i class="fa fa-caret-right"></i></button>
                        

@@ -1,10 +1,10 @@
 @extends('layouts.front_end')
-@section('title','Investment Site')
+@section('title','Forexzone | Contact Us')
 @section('content')
 <section id="top_banner">
         <div class="banner">
             <div class="inner text-center">
-                <h2>Lorem ipsum dolor sit amet</h2>
+                <h2>Contact</h2>
             </div>
         </div>
         <div class="page_info">

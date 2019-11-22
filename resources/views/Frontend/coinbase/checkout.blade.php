@@ -1,6 +1,6 @@
 @extends('layouts.front_end')
 
-@section('title','Investment Site')
+@section('title','Forexzone | Coinbase Checkout')
 
 @section('content')
 
