@@ -56,7 +56,7 @@
                                     {{ __('Dashboard') }}   
                                     </a>
                                     
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="{{ route('frontend.user.index', Auth::user()->id) }}">
                                     {{ __('Profile') }}  
                                     </a>
                                     <a class="dropdown-item" href="#">

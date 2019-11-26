@@ -10,7 +10,7 @@
                         <div class="wpb_wrapper">
                             <div class="section-heading text-center">
                                 <h1>Our <span>Plans</span></h1>
-                                <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset nam nostrud euismod volumus ne mei.</p>
+                                <p class="subheading">OUR PLANS ARE FLEXIBLE : FOR THOSE WHO WOULD LIKE TO ENGAGE IN OUR INVESTMENT PLATFORM PRIOR TO WHEN THEY START TRADING  INDEPENDENTLY,THESE ARE THE PERCENTAGE PROFITS WE OFFER FROM THE FOREX/BINARY MARKET .</p>
                             </div>
                             <div class="row" style="margin-top:30px;" alig-content="center">
                                 <div class="wpb_column vc_column_container col-sm-2 block grow ">
@@ -18,7 +18,8 @@
                                         <div class="wpb_wrapper">
                                             <div class="pricing-plan pricing-color-true">
                                                 <div class="pricing-plan-head pricing-plan-1">
-                                                    <h3>Weekly <br> Package</h3>
+                                                    <!-- <h3>Weekly <br> Package</h3> -->
+                                                    <h3>{{ $package1->package_name }}</h3>
                                                     <div class="pricing-price">
                                                         <span class="pricing-amount">15%</span>
                                                         <span class="pricing-per">after 10 days</span>
@@ -49,8 +50,8 @@
                                         <div class="wpb_wrapper">
                                             <div class="pricing-plan pricing-color-true ">
                                                 <div class="pricing-plan-head pricing-plan-2">
-                                                    
-                                                    <h3>Monthly <br> Package</h3>
+                                                    <h3>{{ $package2->package_name }}</h3>
+                                                    <!-- <h3>Monthly <br> Package</h3> -->
                                                     <div class="pricing-price">
                                                         <span class="pricing-amount">40%</span>
                                                         <span class="pricing-per">after 30 days</span>
@@ -81,8 +82,8 @@
                                         <div class="wpb_wrapper">
                                             <div class="pricing-plan pricing-color-true ">
                                                 <div class="pricing-plan-head pricing-plan-1">
-                                                    
-                                                    <h3>Forex Account Management</h3>
+                                                    <h3>{{ $package3->package_name }}</h3>
+                                                    <!-- <h3>Forex Account Management</h3> -->
                                                     <div class="pricing-price">
                                                         <span class="pricing-amount">$500</span>
                                                         <span class="pricing-per">per six months</span>
@@ -113,8 +114,8 @@
                                         <div class="wpb_wrapper">
                                             <div class="pricing-plan pricing-color-true ">
                                                 <div class="pricing-plan-head pricing-plan-2">
-                                                    
-                                                    <h3>VIP Trading Signals</h3>
+                                                    <h3>{{ $package4->package_name }}</h3>
+                                                    <!-- <h3>VIP Trading Signals</h3> -->
                                                     <div class="pricing-price">
                                                         <span class="pricing-amount">$100</span>
                                                         <span class="pricing-per">monthly</span>
@@ -146,7 +147,8 @@
                                         <div class="wpb_wrapper">
                                             <div class="pricing-plan pricing-color-true">
                                                 <div class="pricing-plan-head pricing-plan-1">
-                                                    <h3>Personal Training</h3>
+                                                    <!-- <h3>Personal Training</h3> -->
+                                                    <h3>{{ $package5->package_name }}</h3>
                                                     <div class="pricing-price">
                                                         <span class="pricing-amount">$200</span>
                                                         <span class="pricing-per"></span>

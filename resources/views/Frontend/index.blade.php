@@ -66,24 +66,27 @@
                     <div class="col-md-2 col-xs-2"><i class="fa fa-laptop feature_icon"></i></div>
                     <div class="col-md-10 col-xs-10">
                         <h4>100% Responsive</h4>
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        <a href="#" class="readmore">Read More <i class="fa fa-caret-right"></i></a>
+                        <p>Enjoy the mobile first responsive website</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-12 block">
                     <div class="col-md-2 col-xs-2"><i class="fa fa-bullhorn feature_icon"></i></div>
                     <div class="col-md-10 col-xs-10">
                         <h4>Powerful Features</h4>
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        <a href="#" class="readmore">Read More <i class="fa fa-caret-right"></i></a>
+                        <p>Experienced traders/trainers with the forex/binary intellectual know-how <br />
+Swift confirmation of deposit <br />
+Fast payment of withdrawn funds by client<br />
+Active support to attend to investors<br />
+Protection of your personal registered details<br />
+Reasonable and sustainable return of invested trading capital</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-12 block">
                     <div class="col-md-2 col-xs-2"><i class="fa fa-support feature_icon"></i></div>
                     <div class="col-md-10 col-xs-10">
                         <h4>Customer Support</h4>
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        <a href="#" class="readmore">Read More <i class="fa fa-caret-right"></i></a>
+                        <p>We have well trained and active admins to attend to you
+Join our group chat,and message our admins and be promptly attended to</p>
                     </div>
                 </div>
             </div>
@@ -104,16 +107,15 @@
                 <div class="text-block">
                     <div class="section-heading">
                         <h1>ABOUT <span>US</span></h1>
-                        <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut.</p>
+                        <p class="subheading">About Forexzone.org</p>
                     </div>
 
                     <ul class="aboutul">
-                        <li> <i class="fa fa-check"></i>Vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</li>
-                        <li> <i class="fa fa-check"></i>legimus copiosae instructior ei ut vix denique fierentis atqui mucius consequat ad pro.</li>
-                        <li> <i class="fa fa-check"></i>Ea saperet inimicu ut qui dolor oratio maiestatis ubique mnesarchum.</li>
-                        <li> <i class="fa fa-check"></i>Sanctus voluptatibus et per illum noluisse facilisis quo atqui mucius ad pro.</li>
-                        <li> <i class="fa fa-check"></i>At illum noluisse facilisis quo te dictas epicurei suavitate qui his ad.</li>
-                        <li> <i class="fa fa-check"></i>Tantas propriae mediocritatem id vix qui everti efficiantur an ocurreret consetetur.</li>
+                        <li> <i class="fa fa-check"></i>FOREXZONE IS AN ONLINE INVESTMENT TRADING COMPANY WITH WIDE TRADING EXPERIENCE THAT DEALS  IN CRYPTOCURRENCIES.</li>
+                        <li> <i class="fa fa-check"></i>WE PROVIDE TRAINING OPPORTUNITIES TO INDIVIDUALS TO LEARN HOW TO TRADE FOR THEMSELVES IN THE FOREX AND BINARY MARKET.</li>
+                        <li> <i class="fa fa-check"></i>WE HAVE ORGANIZED TRADING MANAGEMENT PLATFORMS  FOR OUR INVESTORS TO EARN PROFITS AS LOW AS 15% AND HIGH AS 40% WITHIN THE DURATION OF 10 TO 30DAYS RESPECTIVELY .</li>
+                        <li> <i class="fa fa-check"></i>WE PROVIDE SIGNALS FOR ALL OUR ESTEEMED INVESTORS .</li>
+                        <li> <i class="fa fa-check"></i>WELCOME TO THE MOST LUCRATIVE TRADING PLATFORM ONLINE.</li>
                     </ul>
 
                     <button type="button" class="btn btn-primary slide">Learn More  <i class="fa fa-caret-right"></i> </button>
@@ -130,7 +132,10 @@
             <div class="section-heading text-center">
                 <div class="col-md-12 col-xs-12">
                     <h1>What <span>We Do</span></h1>
-                    <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset nam nostrud euismod volumus ne mei.</p>
+                    <p class="subheading">Forex zone trades the forex and binary market,making profits for its clients.We also offer forex trading classes,manage forex/binary accounts,sell forex trading materials to interested Members
+    In addition,Our experienced traders seek to deliver superior risk adjusted returns through the economic cycle by investing across a diverse range of proprietary trading models which are used on the cryptocurrencies markets.
+We are a private group of experts for crypto investments.forex zone is an online crypto training/trading investment company which focus to generate profit for its clients.
+We engage in various daily trades which effect the profits shared with our investors with minimal risk.Get the forex and binary training you need at forex zone</p>
                 </div>
             </div>
 
@@ -144,7 +149,7 @@
 
                     <div class="process-text-block">
                         <h4><a href="#">Idea</a></h4>
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum</p>
+                        <p>ForexZone as a fast growing training/trading company,we believe in  creating wealth via the Foreign exchange market and binary trading to serve as an extra source of income.Forexzone brings you the opportunity to learn and also earn.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 block process-block">

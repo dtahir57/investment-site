@@ -1,5 +1,5 @@
 @extends('layouts.front_end')
-@section('title','Investment Site')
+@section('title','Forexzone | Login')
 @section('content')
 <section id="top_banner">
         <div class="banner">

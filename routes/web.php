@@ -64,6 +64,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/package3', 'Admin\CoinbaseController@package3')->name('coinbase.package3');
     Route::post('/package4', 'Admin\CoinbaseController@package4')->name('coinbase.package4');
     Route::post('/package5', 'Admin\CoinbaseController@package5')->name('coinbase.package5');
+
+    Route::get('/user/profile/{id}', 'Frontend\UserController@index')->name('frontend.user.index');
 });
    Route::get('/','Frontend\WelcomeController@index')->name('main');
    Route::get('packages','Frontend\FrontendController@packages')->name('packages');
