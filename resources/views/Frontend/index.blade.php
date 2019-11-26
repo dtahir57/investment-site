@@ -199,21 +199,19 @@ We engage in various daily trades which effect the profits shared with our inves
             <div class="section-heading text-center">
                 <div class="col-md-12 col-xs-12">
                     <h1>What Our <span>Client Says</span></h1>
-                    <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset nam nostrud euismod volumus ne mei.</p>
-                </div>
+                    </div>
             </div>
 
             <div class="row">
                 <div class="col-md-4 col-sm-12 block ">
                     <div class="testimonial_box">
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset. </p>
+                        <p>So happy now as ForexZone has just paid me good project , superb place to earn and I get tips on trading from time to time.wow gracias</p>
                     </div>
                     <div class="arrow-down"></div>
                     <div class="testimonial_user">
-                        <div class="user-image"><img src="{{asset('frontend/img/user1.png')}}" alt="user" class="img-responsive" /></div>
+                        <div class="user-image"><img src="{{asset('img/client1.png')}}" alt="user" class="img-responsive" style="border-radius:50%;height:60px"/></div>
                         <div class="user-info">
-                            <h5>Lorem Ipsum</h5>
-                            <p>Manager</p>
+                            <h5>Engr.SESAN BALOGUN</h5>
                         </div>
                     </div>
                 </div>
@@ -221,28 +219,26 @@ We engage in various daily trades which effect the profits shared with our inves
 
                 <div class="col-md-4 col-sm-12 block">
                     <div class="testimonial_box">
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset. </p>
+                        <p> A friend told me about Forexzone recently, but I was scared to join,so I decided to enroll for their online Forex/binary trading and so far so good am learning more each day, thanks ForexZone</p>
                     </div>
                     <div class="arrow-down"></div>
                     <div class="testimonial_user">
-                        <div class="user-image"><img src="{{asset('frontend/img/user1.png')}}" alt="user" class="img-responsive" /></div>
+                        <div class="user-image"><img src="{{asset('img/client2.png')}}" alt="user" class="img-responsive" style="border-radius:50%"/></div>
                         <div class="user-info">
-                            <h5>Lorem Ipsum</h5>
-                            <p>Manager</p>
+                            <h5>TALAI AL MUHAD</h5>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-12 block">
                     <div class="testimonial_box">
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset. </p>
+                        <p>I invested in Forexzone, though skeptical at first, but I have been paid after my money was used to trade.Thank you ForexZone </p>
                     </div>
                     <div class="arrow-down"></div>
                     <div class="testimonial_user">
-                        <div class="user-image"><img src="{{asset('frontend/img/user1.png')}}" alt="user" class="img-responsive" /></div>
+                        <div class="user-image"><img src="{{asset('img/client3.png')}}" alt="user" class="img-responsive" style="border-radius:50%"/></div>
                         <div class="user-info">
-                            <h5>Lorem Ipsum</h5>
-                            <p>Manager</p>
+                            <h5>OFURE  MARYLYN</h5>
                         </div>
                     </div>
                 </div>

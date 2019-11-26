@@ -25,12 +25,13 @@ $(window).scroll(function() {
 
     if ($(this).scrollTop() > 50) {
         $('header').addClass("sticky");
-    } else {
-        $('header').removeClass("sticky");
-    }
+    } 
 });
 
-
+$('.scroll').click(function()
+{
+    $('header').addClass("sticky");
+});
 function toggleIcon(e) {
     $(e.target)
         .prev('.panel-heading')

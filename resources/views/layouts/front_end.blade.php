@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('frontend/scss/main.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/scss/skin.css')}}">
+    
     @yield('style')
     <style type="text/css">
         .dropdown-item {
@@ -25,7 +26,7 @@
             <div class="container">
                 <div class="row">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <button type="button" class="navbar-toggle collapsed scroll" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         				<span class="sr-only">Toggle navigation</span>
         				<span class="icon-bar"></span>
         				<span class="icon-bar"></span>
@@ -185,5 +186,4 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="{{asset('frontend/script/index.js')}}"></script>
-   
 </html>
