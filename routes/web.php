@@ -13,13 +13,13 @@
 
 
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
 
 Route::get('/home', 'Admin\AdminController@index')->name('home');
 Route::get('/coinbase', 'Admin\CoinbaseController@index');
 
-Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => '/admin', 'middleware' =>['auth','role:Super_User']], function () {
     
     Route::get('packages', 'Admin\PackageController@index')->name('package.index');
     Route::get('packages/create','Admin\PackageController@create')->name('package.create');
@@ -46,6 +46,10 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
     Route::patch('users/update/{user}','UserManagement\UserController@update')->name('user.update');
     Route::delete('users/delete/{user}','UserManagement\UserController@destroy')->name('user.destroy');
 
+    Route::get('request','Admin\UserRequestController@index')->name('request.index');
+    Route::delete('request/delete/{request}','Admin\UserRequestController@destroy')->name('request.destroy');
+    Route::get('request/accept/{request}','Admin\UserRequestController@accept')->name('request.accept');
+
     /**
      * Starting Routes For Subscriptions
      */
@@ -55,20 +59,21 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
      */
 });
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/Frontend/home', function () {
-        return view('/Frontend/home');
-    })->name('user.dashboard');
+Route::group(['middleware' =>['auth','verified']], function () {
+    Route::get('/Frontend/home','Frontend\UserController@index')->name('user.dashboard');
     Route::post('/package1', 'Admin\CoinbaseController@package1')->name('coinbase.package1');
     Route::post('/package2', 'Admin\CoinbaseController@package2')->name('coinbase.package2');
     Route::post('/package3', 'Admin\CoinbaseController@package3')->name('coinbase.package3');
     Route::post('/package4', 'Admin\CoinbaseController@package4')->name('coinbase.package4');
     Route::post('/package5', 'Admin\CoinbaseController@package5')->name('coinbase.package5');
-
-    Route::get('/user/profile/{id}', 'Frontend\UserController@index')->name('frontend.user.index');
+    Route::get('/user/profile/{id}', 'Frontend\UserController@profile')->name('frontend.user.profile');
+    Route::patch('/upload/{user}','Frontend\UserController@update')->name('user.update');
 });
-   Route::get('/','Frontend\WelcomeController@index')->name('main');
+   
+   
+   Route::get('/','Frontend\FrontendController@index')->name('main');
    Route::get('packages','Frontend\FrontendController@packages')->name('packages');
-   Route::view('about','Frontend/about')->name('about');
-   Route::view('faq','Frontend/faq')->name('faq');
-   Route::view('contact','Frontend/contact')->name('contact');
+   Route::get('contact','Frontend\FrontendController@contact')->name('contact');
+   Route::get('about','Frontend\FrontendController@about')->name('about');
+   
+

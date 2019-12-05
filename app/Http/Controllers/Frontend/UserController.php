@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserprofileRequest;
+use App\User;
+use App\UserRequest;
 use Auth;
 
 class UserController extends Controller
@@ -13,10 +16,15 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+         $this->middleware(['auth','verified']);
+    }
+
     public function index()
     {
-        $user = Auth::user();
-        return view('Frontend.user.index', compact('user'));
+        $user=Auth::user();
+        return view('Frontend.home',compact('user'));
     }
 
     /**
@@ -24,9 +32,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function profile()
     {
-        //
+        $user = Auth::user();
+        return view('Frontend.user.index', compact('user'));
     }
 
     /**
@@ -37,7 +46,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -69,9 +78,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserprofileRequest $request, $id)
     {
-        //
+
+        $user=User::find($id);
+        $filename=sprintf('image_%s.png',random_int(1,10000));
+        $request->file('image')->storeAs($user->name,$filename,'public');
+        $user->image_name=$filename;
+        $user->save();
+        $request=new UserRequest;
+        $request->users_id=$user->id;
+        $request->save();
+        if($request)
+        {
+            return redirect()->back();
+        }
     }
 
     /**

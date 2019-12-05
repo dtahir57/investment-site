@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
+	public function index()
+    {
+        return view('Frontend.index');
+    }
+
     public function packages()
     {
     	$package1 = Package::where('package_type', 1)->first();
@@ -16,5 +21,15 @@ class FrontendController extends Controller
     	$package4 = Package::where('package_type', 4)->first();
     	$package5 = Package::where('package_type', 5)->first();
     	return view('Frontend/packages', compact('package1', 'package2', 'package3', 'package4', 'package5'));
-    }
+	}
+	public function contact()
+    {
+        return view('Frontend.contact');
+	}
+
+	public function about()
+    {
+        return view('Frontend.about');
+	}
+	
 }

@@ -1,14 +1,14 @@
 <?php
 
 namespace App;
-
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use App\Package;
-
-class User extends Authenticatable
+use App\UserRequest;
+use App\UserProfile;
+class User extends Authenticatable implements MustVerifyEmail
 {
     
     use Notifiable,HasRoles;
@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','username','phone'
+        'name', 'email', 'password','username','phone','wallet_address'
     ];
 
     /**
@@ -44,4 +44,11 @@ class User extends Authenticatable
     {
         return $this->hasOne(Package::class);
     }
+
+    public function request()
+    {
+        return $this->hasOne(UserRequest::class,'users_id','id');
+    }
+   
+    
 }

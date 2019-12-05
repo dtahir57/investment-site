@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
-
+namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\UserRequest;
+use Spatie\Permission\Models\Role;
+use App\User;
+use Session;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class UserRequestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +17,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        //
+        $requests=UserRequest::all();
+        return view('admin.request.index',compact('requests'));
     }
 
     /**
@@ -41,10 +45,10 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\UserRequest  $userRequest
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(UserRequest $userRequest)
     {
         //
     }
@@ -52,10 +56,10 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\UserRequest  $userRequest
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(UserRequest $userRequest)
     {
         //
     }
@@ -64,10 +68,10 @@ class DashboardController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\UserRequest  $userRequest
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, UserRequest $userRequest)
     {
         //
     }
@@ -75,11 +79,29 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\UserRequest  $userRequest
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $request=UserRequest::find($id)->delete();
+        if($request)
+        {
+            Session::flash('deleted','Request Deleted Successfully');
+            return redirect()->route('request.index');
+        }
+    }
+
+    public function accept($id)
+    {
+        $user=User::find($id);
+        $user->assignRole('Verified_User');
+        $request=UserRequest::where('users_id',$id)->delete();
+        if($user)
+        {
+            Session::flash('accepted','Request Accepted');
+            return redirect()->route('request.index');
+        }
     }
 }
+

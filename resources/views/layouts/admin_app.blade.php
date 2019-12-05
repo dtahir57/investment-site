@@ -220,6 +220,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{route('request.index')}}"           class="nav-link {{(Request::is('admin/request') ? 'active' : '')}}" >
+              <i class="nav-icon fas fa-id-card"></i>
+              <p>
+                Manage Requests
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
                              <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">

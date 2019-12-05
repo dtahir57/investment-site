@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('frontend/scss/main.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/scss/skin.css')}}">
-    
     @yield('style')
+    
     <style type="text/css">
         .dropdown-item {
             display: block;
@@ -57,7 +57,7 @@
                                     {{ __('Dashboard') }}   
                                     </a>
                                     
-                                    <a class="dropdown-item" href="{{ route('frontend.user.index', Auth::user()->id) }}">
+                                    <a class="dropdown-item" href="{{ route('frontend.user.profile', Auth::user()->id) }}">
                                     {{ __('Profile') }}  
                                     </a>
                                     <a class="dropdown-item" href="#">
