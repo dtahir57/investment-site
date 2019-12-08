@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\UserRequest;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Mail;
 use App\User;
 use Session;
+use App\Mail\CustomMail;
 use Illuminate\Http\Request;
 
 class UserRequestController extends Controller
@@ -84,7 +86,9 @@ class UserRequestController extends Controller
      */
     public function destroy($id)
     {
+        $user=UserRequest::find($id)->user->email;
         $request=UserRequest::find($id)->delete();
+        Mail::to($user)->send(new CustomMail());
         if($request)
         {
             Session::flash('deleted','Request Deleted Successfully');
