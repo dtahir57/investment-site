@@ -15,7 +15,11 @@
 
 Auth::routes(['verify'=>true]);
 
-
+Route::get('email/verify', 'Auth\VerificationController@show')
+->name('verification.notice');
+Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
+Route::get('email/resend', 'Auth\VerificationController@resend')
+->name('verification.resend');
 Route::get('/home', 'Admin\AdminController@index')->name('home');
 Route::get('/coinbase', 'Admin\CoinbaseController@index');
 
@@ -50,10 +54,13 @@ Route::group(['prefix' => '/admin', 'middleware' =>['auth','role:Super_User']], 
     Route::delete('request/delete/{request}','Admin\UserRequestController@destroy')->name('request.destroy');
     Route::get('request/accept/{request}','Admin\UserRequestController@accept')->name('request.accept');
 
+    Route::get('client/add','Admin\ClientController@create')->name('client.add');
+    Route::post('client/store','Admin\ClientController@store')->name('client.store');
     /**
      * Starting Routes For Subscriptions
      */
     Route::get('subscriptions', 'Admin\SubscriptionController@index')->name('subscription.index');
+    
     /**
      * Ending Routes For Subscription
      */
@@ -67,7 +74,8 @@ Route::group(['middleware' =>['auth','verified']], function () {
     Route::post('/package4', 'Admin\CoinbaseController@package4')->name('coinbase.package4');
     Route::post('/package5', 'Admin\CoinbaseController@package5')->name('coinbase.package5');
     Route::get('/user/profile/{id}', 'Frontend\UserController@profile')->name('frontend.user.profile');
-    Route::patch('/upload/{user}','Frontend\UserController@update')->name('user.update');
+    Route::patch('/upload/{user}','Frontend\UserController@update')->name('user.upload');
+    Route::get('/witdraw/{user}','Frontend\UserController@withdraw')->name('user.withdraw');
 });
    
    
@@ -75,5 +83,6 @@ Route::group(['middleware' =>['auth','verified']], function () {
    Route::get('packages','Frontend\FrontendController@packages')->name('packages');
    Route::get('contact','Frontend\FrontendController@contact')->name('contact');
    Route::get('about','Frontend\FrontendController@about')->name('about');
+   Route::get('privacy','Frontend\FrontendController@privacy')->name('privacy');
    
 

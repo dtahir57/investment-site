@@ -20,6 +20,10 @@ class AddToUsersTable extends Migration
                     ->on('packages')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
+            $table->string('invested_amount')->nullable();
+            $table->date('package_started_at')->nullable();
+            $table->date('withdraw_date')->nullable();
+
         });
     }
 
@@ -32,6 +36,10 @@ class AddToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumnIfExists('package_id')->unsigned()->nullable();
+            $table->dropColumnIfExists('invested_amount')->nullable();
+            $table->dropColumnIfExists('package_started_at')->nullable();
+            $table->dropColumnIfExists('withdraw_date')->nullable();
+            
         });
     }
 }

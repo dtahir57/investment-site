@@ -52,8 +52,8 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu "  aria-labelledby="navbarDropdown" >
-                                    <a class="dropdown-item " href="{{route('user.dashboard')}}" >
+                                <div class="dropdown-menu"  aria-labelledby="navbarDropdown" >
+                                    <a class="dropdown-item" href="{{route('user.dashboard')}}" >
                                     {{ __('Dashboard') }}   
                                     </a>
                                     
@@ -123,7 +123,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-md-3 col-sm-3 col-xs-12 <block></block>">
                     <div class="footer-block">
                         <h4>Recent Posts</h4>
@@ -155,7 +154,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 btm-footer-links">
-                    <a href="#">Privacy Policy</a>
+                    <a href="{{route('privacy')}}">Privacy Policy</a>
                     <a href="#">Terms of Use</a>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 copyright">

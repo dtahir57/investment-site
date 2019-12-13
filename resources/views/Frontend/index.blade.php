@@ -26,11 +26,11 @@
             <div class="item">
                 <div class="fill" style="background-image:url({{asset('frontend/img/banner-slide-2.jpg')}})"></div>
                 <div class="carousel-caption slide-up">
-                    <h1 class="banner_heading">Providing The <span>Highest </span>Lorem</h1>
-                    <p class="banner_txt">Lorem ipsum dolor sit amet sit legimus copiosae instructior eiut vix denique fierentis ea saperet inimicu utqui dolor oratio mnesarchum.</p>
+                    <h1 class="banner_heading">Welcome To <span>Forexzone </span></h1>
+                    <p class="banner_txt">Forexzone is an online investment trading company with a vast trading experience in wealth optimization. Ever desired to trade in the financial market known as the forex market?.</p>
                     <div class="slider_btn">
                         <button type="button" class="btn btn-default slide">Learn More <i class="fa fa-caret-right"></i></button>
-                        <button type="button" class="btn btn-primary slide">Learn More <i class="fa fa-caret-right"></i></button>
+                       
                     </div>
                 </div>
             </div>
@@ -38,11 +38,11 @@
             <div class="item">
                 <div class="fill" style="background-image:url({{asset('frontend/img/banner-slide-3.jpg')}})"></div>
                 <div class="carousel-caption slide-up">
-                    <h1 class="banner_heading">Providing The <span>Highest </span>Lorem</h1>
-                    <p class="banner_txt">Lorem ipsum dolor sit amet sit legimus copiosae instructior eiut vix denique fierentis ea saperet inimicu utqui dolor oratio mnesarchum.</p>
+                    <h1 class="banner_heading">Welcome To <span>Forexzone </span></h1>
+                    <p class="banner_txt">Forexzone is an online investment trading company with a vast trading experience in wealth optimization. Ever desired to trade in the financial market known as the forex market?.</p>
                     <div class="slider_btn">
                         <button type="button" class="btn btn-default slide">Learn More <i class="fa fa-caret-right"></i></button>
-                        <button type="button" class="btn btn-primary slide">Learn More <i class="fa fa-caret-right"></i></button>
+                       
                     </div>
                 </div>
             </div>
@@ -66,7 +66,9 @@
                     <div class="col-md-2 col-xs-2"><i class="fa fa-laptop feature_icon"></i></div>
                     <div class="col-md-10 col-xs-10">
                         <h4>100% Responsive</h4>
-                        <p>Enjoy the mobile first responsive website</p>
+                        <p>Our support is available 24/7 Mondays to Saturdays to attend to you.
+                        Join our telegram group chat and send a message to our group admin or send us a mail and get a respond  as fast as possible.
+                        We are only a click away,chat us whenever the need arises.</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-12 block">
@@ -74,11 +76,11 @@
                     <div class="col-md-10 col-xs-10">
                         <h4>Powerful Features</h4>
                         <p>Experienced traders/trainers with the forex/binary intellectual know-how <br />
-Swift confirmation of deposit <br />
-Fast payment of withdrawn funds by client<br />
-Active support to attend to investors<br />
-Protection of your personal registered details<br />
-Reasonable and sustainable return of invested trading capital</p>
+                        Swift confirmation of deposit <br />
+                        Fast payment of withdrawn funds by client<br />
+                        Active support to attend to investors<br />
+                        Protection of your personal registered details.<br />
+                        Reasonable and sustainable return of invested trading capital.</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-12 block">
@@ -86,7 +88,7 @@ Reasonable and sustainable return of invested trading capital</p>
                     <div class="col-md-10 col-xs-10">
                         <h4>Customer Support</h4>
                         <p>We have well trained and active admins to attend to you
-Join our group chat,and message our admins and be promptly attended to</p>
+                        Join our group chat,and message our admins and be promptly attended to.</p>
                     </div>
                 </div>
             </div>
@@ -161,7 +163,7 @@ We engage in various daily trades which effect the profits shared with our inves
 
                     <div class="process-text-block">
                         <h4><a href="#">Concept</a></h4>
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum</p>
+                        <p>The concept of Forexzone can be related to her secret cooking recipe. However we guarantee a network of feasibility and trust.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 block process-block">
@@ -173,7 +175,7 @@ We engage in various daily trades which effect the profits shared with our inves
 
                     <div class="process-text-block">
                         <h4><a href="#">Design</a></h4>
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum</p>
+                        <p>Forexzone's website, was designed with a mobile friendly,easily accessible and top notch security system: that gives her investors a safe and reliable haven to help maximize earnings.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 block process-block lastchild">
@@ -185,7 +187,7 @@ We engage in various daily trades which effect the profits shared with our inves
 
                     <div class="process-text-block">
                         <h4><a href="#">Develop</a></h4>
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum</p>
+                        <p>The website was developed by a team of well experienced programmers. Our programmers are professionals and they work 24/7 to battle cyber crimes to keep your investment safe.</p>
                     </div>
                 </div>
             </div>

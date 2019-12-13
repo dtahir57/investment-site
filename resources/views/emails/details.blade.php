@@ -170,8 +170,9 @@
                                     <td align="left" style="color: #888888; font-size: 16px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;">
                                         <!-- section text ======-->
                                         <p style="line-height: 24px;margin-bottom:15px;">
-                                            Your request has been cancelled, <br><br>
-                                            Please upload new image for identity verification.
+                                            You can Login using: <br>
+                                            <span>Email:</span>{{$details['email']}}<br>
+                                            <span>Password:</span>{{$details['password']}}<br>
                                         </p>
                                         <p style="line-height: 24px">
                                             REGARDS,<br>

@@ -24,7 +24,7 @@
         <div class="container">
             <div class="section-heading text-center">
                 <h2>Drop your <span>Message</span></h2>
-                <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset nam nostrud euismod volumus ne mei.</p>
+                <p class="subheading">Hello! We know you have questions' send in all your inquiries and complaints and we would gladly reply back within 24-48 hours of receiving your request . Be rest assured we are always available</p>
             </div>
             <div class="row contact-wrap">
                 <div class="status alert alert-success" style="display: none"></div>
@@ -73,36 +73,6 @@
                             <div class="gmap">
                                 <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=JoomShaper,+Dhaka,+Dhaka+Division,+Bangladesh&amp;aq=0&amp;oq=joomshaper&amp;sll=37.0625,-95.677068&amp;sspn=42.766543,80.332031&amp;ie=UTF8&amp;hq=JoomShaper,&amp;hnear=Dhaka,+Dhaka+Division,+Bangladesh&amp;ll=23.73854,90.385504&amp;spn=0.001515,0.002452&amp;t=m&amp;z=14&amp;iwloc=A&amp;cid=1073661719450182870&amp;output=embed"></iframe>
                             </div>
-                        </div>
-                        <div class="col-sm-7 map-content">
-                            <ul class="row">
-                                <li class="col-sm-6">
-                                    <address>
-									<h5>Head Office</h5>
-									<p>Aspire Software Solutions <br>
-									202, Parishram Complex,<br>
-									Mithakhali Six Roads,<br>
-									Navrangpura, Ahmedabad,<br>
-									Gujarat, India. </p>
-										<p>Phone:+91 848 594 5080 <br>
-									Email Address:sales@aspiresoftware.in</p>
-								</address>
-
-                                </li>
-                                <li class="col-sm-6">
-                                    <address>
-									<h5>Zone#2 Office</h5>
-									<p>Aspire Software Solutions <br>
-									202, Parishram Complex,<br>
-									Mithakhali Six Roads,<br>
-									Navrangpura, Ahmedabad,<br>
-									Gujarat, India. </p>
-									<p>Phone:+91 848 594 5080 <br>
-									Email Address:sales@aspiresoftware.in</p>
-								</address>
-
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>

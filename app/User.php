@@ -42,7 +42,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function package()
     {
-        return $this->hasOne(Package::class);
+        return $this->belongsTo(Package::class,'package_id','id');
     }
 
     public function request()

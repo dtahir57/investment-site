@@ -145,7 +145,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     
-    <a href="{{ ('/') }}" class="brand-link">
+    <a href="{{ ('/home') }}" class="brand-link">
       <img src="{{ asset('img/logo.png') }}" style="width: 80px; height: auto;">
     </a>
 
@@ -166,7 +166,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
+            <li class="nav-item">
             <a href="{{ route('home') }}" class="nav-link {{(Request::is('home') ? 'active' : '')}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -174,20 +174,28 @@
               </p>
             </a>
           </li>
+          <li class="nav-item has-treeview">
+          <a href="#" class="nav-link {{(Request::is('admin/packages') ? 'active' : '')}}
+                                      {{(Request::is('admin/packages/create') ? 'active' : '')}}
+                                      {{(Request::is('admin/permissions') ? 'active' : '')}}
+                                      {{(Request::is('admin/permissions/create') ? 'active' : '')}}
+                                      {{(Request::is('admin/roles') ? 'active' : '')}}
+                                      {{(Request::is('admin/roles/create') ? 'active' : '')}}
+                                      {{(Request::is('admin/users') ? 'active' : '')}}
+                                      {{(Request::is('admin/users/create') ? 'active' : '')}}">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                User Management
+                <i class="right fas fa-angle-left"></i>
+              </p>
+          </a>
+          <ul class="nav nav-treeview">
           <li class="nav-item">
             <a href="{{ route('package.index') }}" class="nav-link {{(Request::is('admin/packages') ? 'active' : '')}}
                                                                     {{(Request::is('admin/packages/create') ? 'active' : '')}}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Packages
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('subscription.index') }}" class="nav-link {{(Request::is('admin/subscriptions') ? 'active' : '')}}">
-              <i class="nav-icon fas fa-envelope"></i>
-              <p>
-                Subscriptions
               </p>
             </a>
           </li>
@@ -202,8 +210,7 @@
           </li>
           <li class="nav-item">
             <a href="{{route('role.index')}}"       class="nav-link {{(Request::is('admin/roles') ? 'active' : '')}}
-                                                                    {{(Request::is('admin/roles/create') ? 'active' : '')}}
-                                                                    {{(Request::is('admin/roles/edit') ? 'active' : '')}}">
+                                                                    {{(Request::is('admin/roles/create') ? 'active' : '')}}">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Roles
@@ -219,8 +226,26 @@
               </p>
             </a>
           </li>
+          </ul>
+          </li>
           <li class="nav-item">
-            <a href="{{route('request.index')}}"           class="nav-link {{(Request::is('admin/request') ? 'active' : '')}}" >
+            <a href="{{ route('subscription.index') }}" class="nav-link {{(Request::is('admin/subscriptions') ? 'active' : '')}}">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>
+                Subscriptions
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('client.add')}}" class="nav-link {{(Request::is('admin/verifiedusers') ? 'active' : '')}}">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Add Clent
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('request.index')}}" class="nav-link {{(Request::is('admin/request') ? 'active' : '')}}" >
               <i class="nav-icon fas fa-id-card"></i>
               <p>
                 Manage Requests

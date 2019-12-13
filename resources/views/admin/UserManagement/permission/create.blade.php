@@ -27,8 +27,8 @@
           <div class="card">
             
     <div class="card-body">
-<form class="form-horizontal" action="{{route('permission.store')}}" method="POST">
-@csrf
+        <form class="form-horizontal" action="{{route('permission.store')}}" method="POST">
+        @csrf
                 <div class="card-body">
                   <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
@@ -48,8 +48,8 @@
                   
                 </div>
                 <!-- /.card-footer -->
-              </form>
-              </div>
+        </form>
+    </div>
           
           </div>
           <!-- /.card -->

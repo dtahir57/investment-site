@@ -4,37 +4,44 @@
 <section id="top_banner">
         <div class="banner">
             <div class="inner text-center">
-                <h2>Lorem ipsum dolor sit amet</h2>
+                <h2>Hi there</h2>
             </div>
         </div>
     </section>
-
-
-
     <section id="login-reg">
         <div class="container">
             <!-- Top content -->
             <div class="row">
                 <div class="col-md-6 col-sm-12 forms-right-icons">
+                <div class="row">
+                        <a class="navbar-brand" href="{{ ('/') }}">
+                            <img src="{{ asset('img/logo.png') }}" style="width: 70px; height: auto;">
+                        </a>
+                </div>
                     <div class="section-heading">
                         <h2>Sign In With <span>Us</span></h2>
-                        <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.
-                        </p>
+                        <p class="subheading">Hello! Welcome back to Forexzone we happy to have you back : Kindly fill in your details to access your profile area.</p>
                     </div>
                     <div class="row">
                         <div class="col-xs-2 icon"><i class="fa fa-bullhorn"></i></div>
                         <div class="col-xs-10 datablock">
                             <h4>Powerful Features</h4>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                        </div>
+                            <p>Experienced traders/trainers with the forex/binary intellectual know-how
+                            Swift confirmation of deposit 
+                            Fast payment of withdrawn funds by client
+                            Active support to attend to investors
+                            Protection of your personal registered details.
+                            Reasonable and sustainable return of invested trading capital.</p>
+                           </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-2 icon"><i class="fa fa-support"></i></div>
                         <div class="col-xs-10 datablock">
                             <h4>Customer Support</h4>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
+                            <p>We have well trained and active admins to attend to you
+                            Join our group chat,and message our admins and be promptly attended to.</p>
                         </div>
-                    </div>
+                        </div>
 
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -70,6 +77,13 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                </div>
+                                <div style="margin-top:-10px;margin-bottom:10px">
+                                @if (Route::has('password.request'))
+                                    <a href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
                                 </div>
                                 <button type="submit" class="btn">Sign in!</button>
                             </form>

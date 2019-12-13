@@ -92,26 +92,23 @@
                                                     @foreach($roles as $role)
                                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                                         <fieldset>
-                                                            <input type="checkbox" name="roles[]" value="{{ $role->name }}" @if($user->hasRole($role)) checked @endif/>
+                                                            <input type="checkbox" name="roles[]" value="{{ $role->name }}" @if($user->hasRole($role)) checked @endif>
                                                             <label for="role">{{ $role->name }}</label>
                                                         </fieldset>
                                                     </div>
                                                     @endforeach
-                                                </div>
                                 </div>
                                 </div>
                         <div class="card-footer">
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Update') }}
+                                    Edit User
                                 </button>
-                            </div>
+                        </div>
                         </div>
                         </div>
                         
 
-                    </form>
+            </form>
 
             
           </div>

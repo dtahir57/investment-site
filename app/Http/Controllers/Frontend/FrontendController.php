@@ -32,4 +32,8 @@ class FrontendController extends Controller
         return view('Frontend.about');
 	}
 	
+	public function privacy()
+    {
+        return view('Frontend.privacy');
+	}
 }

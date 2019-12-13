@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserprofileRequest;
 use App\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AdminMail;
 use App\UserRequest;
 use Auth;
 
@@ -23,8 +26,9 @@ class UserController extends Controller
 
     public function index()
     {
+        $date=Carbon::now()->format('Y-m-d');
         $user=Auth::user();
-        return view('Frontend.home',compact('user'));
+        return view('Frontend.home',compact('user','date'));
     }
 
     /**
@@ -104,5 +108,19 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function withdraw($id)
+    {
+        $admin=User::Role('Super_User')->first()->email;
+        $user=User::find($id);
+        $details=array(
+            'name'=>$user->name,
+            'email'=>$user->email,
+            'package'=>$user->package->package_name,
+            'invested_amount'=>$user->invested_amount,
+        );
+        Mail::to($admin)->send(new AdminMail($details));
+        Session::flash('sent','Withdraw request sent');
     }
 }

@@ -4,44 +4,52 @@
 <section id="top_banner">
         <div class="banner">
             <div class="inner text-center">
-                <h2>Lorem ipsum dolor sit amet</h2>
+                <h2>Hi there</h2>
             </div>
         </div>
     </section>
-
-
-
     <section id="login-reg">
         <div class="container">
             <!-- Top content -->
+            <div class="row"><div class="col-md-6 col-sm-12 forms-right-icons">
             <div class="row">
-                <div class="col-md-6 col-sm-12 forms-right-icons">
+            <a class="navbar-brand" href="{{ ('/') }}">
+                            <img src="{{ asset('img/logo.png') }}" style="width: 70px; height: auto;">
+                        </a>
+            </div>
                     <div class="section-heading">
                         <h2>Sign Up With <span>Us</span></h2>
-                        <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset nam nostrud euismod volumus ne mei.
-                        </p>
+                        <p class="subheading">WE ARE GLAD TO HAVE YOU WITH US.</p>
                     </div>
                     <div class="row">
                         <div class="col-xs-2 icon"><i class="fa fa-laptop"></i></div>
                         <div class="col-xs-10 datablock">
                             <h4>100% Responsive</h4>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
+                            <p>Our support is available 24/7 Mondays to Saturdays to attend to you.
+                            Join our telegram group chat and send a message to our group admin or send us a mail and get a respond  as fast as possible.
+                            We are only a click away,chat us whenever the need arises.</p>
                         </div>
-                    </div>
+                        </div>
                     <div class="row">
                         <div class="col-xs-2 icon"><i class="fa fa-bullhorn"></i></div>
                         <div class="col-xs-10 datablock">
                             <h4>Powerful Features</h4>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
+                            <p>Experienced traders/trainers with the forex/binary intellectual know-how
+                                Swift confirmation of deposit
+                                Fast payment of withdrawn funds by client
+                                Active support to attend to investors
+                                Protection of your personal registered details.
+                                Reasonable and sustainable return of invested trading capital.</p>    
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-2 icon"><i class="fa fa-support"></i></div>
                         <div class="col-xs-10 datablock">
                             <h4>Customer Support</h4>
-                            <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.</p>
+                            <p>We have well trained and active admins to attend to you
+                            Join our group chat,and message our admins and be promptly attended to.</p>
                         </div>
-                    </div>
+                        </div>
 
                 </div>
                 <!--forms-right-icons-->
@@ -92,7 +100,8 @@
 
                                 <div class="input-group form-group">
                                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-                                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone No." aria-describedby="basic-addon1">
+                                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone No." aria-describedby="basic-addon1"
+                                    pattern="[0-9]*">
                                     @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">{{ $message }}</strong>

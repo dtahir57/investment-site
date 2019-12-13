@@ -25,12 +25,14 @@ $(window).scroll(function() {
 
     if ($(this).scrollTop() > 50) {
         $('header').addClass("sticky");
+        $('body').css("padding-top","60px");
     } 
 });
 
 $('.scroll').click(function()
 {
     $('header').addClass("sticky");
+    $('body').css("padding-top","60px");
 });
 function toggleIcon(e) {
     $(e.target)

@@ -52,11 +52,13 @@ class UserController extends Controller
         $users->username= $request->username;
         $users->phone= $request->phone;
         $users->password = Hash::make($request->password);
-       
         $users->save();
-        foreach($request->roles as $role)
+        if($request->roles != null)
         {
-            $users->assignRole($role);
+            foreach($request->roles as $role)
+            {
+                $users->assignRole($role);
+            }
         }
         if($users)
         {
