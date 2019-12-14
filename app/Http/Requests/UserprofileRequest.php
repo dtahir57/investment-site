@@ -27,4 +27,10 @@ class UserprofileRequest extends FormRequest
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
+    public function messages()
+    {
+        return [
+             'image.image'=>'File must be an image',
+        ];
+    }
 }

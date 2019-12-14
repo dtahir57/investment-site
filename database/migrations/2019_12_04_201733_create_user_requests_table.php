@@ -17,6 +17,7 @@ class CreateUserRequestsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('type');
             $table->timestamps();
         });
     }

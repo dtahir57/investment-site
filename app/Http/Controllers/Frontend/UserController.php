@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\AdminMail;
 use App\UserRequest;
 use Auth;
+use Session;
 
 class UserController extends Controller
 {
@@ -89,9 +90,10 @@ class UserController extends Controller
         $filename=sprintf('image_%s.png',random_int(1,10000));
         $request->file('image')->storeAs($user->name,$filename,'public');
         $user->image_name=$filename;
-        $user->save();
+        $user->update();
         $request=new UserRequest;
         $request->users_id=$user->id;
+        $request->type='verification';
         $request->save();
         if($request)
         {
@@ -110,17 +112,20 @@ class UserController extends Controller
         //
     }
 
-    public function withdraw($id)
+    public function withdraw($id,$address)
     {
-        $admin=User::Role('Super_User')->first()->email;
         $user=User::find($id);
-        $details=array(
-            'name'=>$user->name,
-            'email'=>$user->email,
-            'package'=>$user->package->package_name,
-            'invested_amount'=>$user->invested_amount,
-        );
-        Mail::to($admin)->send(new AdminMail($details));
-        Session::flash('sent','Withdraw request sent');
+        $user->wallet_address=$address;
+        $user->update();
+        $request=new UserRequest;
+        $request->users_id=$user->id;
+        $request->type='withdraw';
+        $request->save();
+        if($request)
+        {
+            Session::flash('withdraw','Withdraw request sent');
+            return redirect()->back();
+        }
+        
     }
 }

@@ -54,6 +54,9 @@ Route::group(['prefix' => '/admin', 'middleware' =>['auth','role:Super_User']], 
     Route::delete('request/delete/{request}','Admin\UserRequestController@destroy')->name('request.destroy');
     Route::get('request/accept/{request}','Admin\UserRequestController@accept')->name('request.accept');
 
+    Route::get('withdraw','Admin\WithdrawController@index')->name('withdraw.index');
+    Route::get('withdraw/accept/{request}','Admin\WithdrawController@accept')->name('withdraw.accept');
+
     Route::get('client/add','Admin\ClientController@create')->name('client.add');
     Route::post('client/store','Admin\ClientController@store')->name('client.store');
     /**
@@ -75,7 +78,7 @@ Route::group(['middleware' =>['auth','verified']], function () {
     Route::post('/package5', 'Admin\CoinbaseController@package5')->name('coinbase.package5');
     Route::get('/user/profile/{id}', 'Frontend\UserController@profile')->name('frontend.user.profile');
     Route::patch('/upload/{user}','Frontend\UserController@update')->name('user.upload');
-    Route::get('/witdraw/{user}','Frontend\UserController@withdraw')->name('user.withdraw');
+    Route::patch('/withdraw/update/{user}/{address}','Frontend\UserController@withdraw')->name('user.withdraw');
 });
    
    

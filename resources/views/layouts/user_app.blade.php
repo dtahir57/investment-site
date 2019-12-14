@@ -58,9 +58,6 @@
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="{{asset('storage/'.$user->name.'/'.$user->image_name)}}" style="width:50px" class="img-circle elevation-2" alt="User Image">
-        </div>
         <div class="info">
           <a href="#" class="d-block">{{ $user->name }}</a>
         </div>
@@ -80,36 +77,26 @@
             </a>
           </li>
           <li class="nav-item">
-                             <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                             </a>
-
-                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                              </form>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+                       {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                     @csrf
+                </form>
           </li>
-         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     @yield('content')
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.0-rc.5
-    </div>
-  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

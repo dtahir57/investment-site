@@ -34,7 +34,7 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" value="{{$user->name}}" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                <span>
+                                <span style="color:red">
                                      @error('name')
                                      <strong>{{$message}}</strong>
                                      @enderror
@@ -48,7 +48,7 @@
 
                             <div class="col-md-6">
                                 <input id="username" type="text"  value="{{$user->username}}" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
-                                <span>
+                                <span style="color:red">
                                      @error('username')
                                      <strong>{{$message}}</strong>
                                      @enderror
@@ -57,13 +57,12 @@
                             </div>
                         </div>
 
-
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text"  value="{{$user->phone}}" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
-                                <span>
+                                <input id="phone" type="text"  value="{{$user->phone}}" class="form-control @error('phone') is-invalid @enderror" name="phone" pattern="[0-9]*" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+                                <span style="color:red">
                                      @error('phone')
                                      <strong>{{$message}}</strong>
                                      @enderror
@@ -77,7 +76,7 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email"  value="{{$user->email}}"class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                                <span>
+                                <span style="color:red">
                                      @error('email')
                                      <strong>{{$message}}</strong>
                                      @enderror

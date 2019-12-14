@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title')</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -53,10 +52,15 @@
                                 </a>
 
                                 <div class="dropdown-menu"  aria-labelledby="navbarDropdown" >
+                                @if(Auth::user()->hasRole('Super_User'))
+                                <a class="dropdown-item" href="{{route('home')}}" >
+                                    {{ __('Dashboard') }}   
+                                    </a>
+                                @else
                                     <a class="dropdown-item" href="{{route('user.dashboard')}}" >
                                     {{ __('Dashboard') }}   
                                     </a>
-                                    
+                                @endif
                                     <a class="dropdown-item" href="{{ route('frontend.user.profile', Auth::user()->id) }}">
                                     {{ __('Profile') }}  
                                     </a>

@@ -8,19 +8,21 @@
         <div class="row mb-2"> 
           <div class="col-md-12">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{route('user.dashboard')}}">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div>
         
       </div><!-- /.container-fluid -->
     </section>
-
+    @if(session('withdraw'))
+               <li class="alert alert-success">{{ session('withdraw') }}</li>
+    @endif
     <!-- Main content -->
     <section class="content">
       <div class="row">
-      @if($user->hasRole('Verified_User'))
-        <div class="col-10">
+    @if($user->request == null && $user->hasRole('Verified_User'))
+      <div class="col-10">
           <div class="card">
             <div class="card-header">
               <h3 class="card-title"><i class="fas fa-tag"></i> Package Details</h3>
@@ -48,13 +50,18 @@
             <div class="card-body">
              <span><b>Name: </b></span>{{$user->name}}<br>
              <span><b>Email: </b></span>{{$user->email}}<br>
-             <span><b>Invested Amount: </b></span>{{$user->invested_amount}}<br>
+             <span><b>Invested Amount: </b></span>{{$user->invested_amount}}<strong>$</strong><br>
              <span><b>Wallet Address: </b></span>{{$user->wallet_address}}<br>
+             <!-- JLpl3x -->
             </div>
-        @if($date == $user->package_started_at)
+          </div>
+        @if($date == $user->withdraw_date)
+          @if($user->request == null)
                 <div class="card-footer">
-                <a href="{{route('user.withdraw',$user->id)}}" type="button" class="btn btn-info float-right">Withdraw</a>
+                <button type="button"  class="btn btn-primary float-right" id="wallet" data-toggle="modal" data-target="#modal-primary"
+                data-id="{{$user->id}}" base-url="{{env('APP_URL',false)}}" data-url="/withdraw/update">Withdraw</button>
                 </div>
+          @endif
                 <!-- /.card-footer -->
         @endif
             <!-- /.card-body -->
@@ -63,20 +70,36 @@
         </div>
         <!-- /.col -->
     @elseif($user->request != null)
-    <div class="col-6" style="margin-left:300px">
-          <div class="card" >
-            <div class="card-header">
-              <h3 class="card-title">Message</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-            Your request have been submitted.Please wait......
-            </div>
-            <!-- /.card-body -->
+          @if($user->request->type == "verification")
+          <div class="col-6" style="margin-left:300px">
+                <div class="card" >
+                  <div class="card-header">
+                    <h3 class="card-title">Message</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                  Verification request sent.Please wait for approval.
+                  </div>
+                  <!-- /.card-body -->
+                </div>
           </div>
-        </div>
-    </div>
-     @else
+          @endif  
+    @elseif($user->request != null)
+          @if($user->request->type == "withdraw")
+          <div class="col-6" style="margin-left:300px">
+                <div class="card" >
+                  <div class="card-header">
+                    <h3 class="card-title">Message</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                  Withdraw request sent.
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+          </div>
+          @endif
+    @else
      <div class="col-6" style="margin-left:300px">
           <div class="card" >
             <div class="card-header">
@@ -87,15 +110,15 @@
                 <form action="{{route('user.upload',$user->id)}}" method="POST" enctype="multipart/form-data">
 					@csrf
 					@method('PATCH')
-					@error('image')
-					<span class="invalid-feedback" role="alert">
-					<strong style="color:red">{{ $message }}</strong>
-					</span>
-					@enderror
 				<div class="form-group row">
                     <div class="col-sm-4"> 
                       <input type="file"  id="image" name="image" accept="image/*">
                     </div>
+                    <span style="color:red">
+                      @error('image')
+                      <strong>{{$message}}</strong>
+                      @enderror
+                      </span>
                 </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-info">Submit</button>
@@ -107,11 +130,41 @@
           </div>
         </div>
     </div>
-    
       @endif
       <!-- /.row -->
     </section>
 
-</body>
-</html>
+
+<form class='withdraw-form' method='post'>
+  @csrf
+  @method('PATCH')
+<div class="modal fade" id="modal-primary">
+        <div class="modal-dialog">
+          <div class="modal-content bg-primary">
+            <div class="modal-header">
+              <h4 class="modal-title">Wallet Address</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">x</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <div class="form-group row">
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="address" placeholder="Enter Wallet Address" name="address">
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="submit" class="btn btn-outline-light">Submit</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+</form>
+@endsection
+@section('script')
+<script src="{{asset('js/wallet.js')}}"></script>
 @endsection

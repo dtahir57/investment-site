@@ -3,14 +3,11 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\UserRequest;
-use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\Mail;
 use App\User;
 use Session;
-use App\Mail\CustomMail;
 use Illuminate\Http\Request;
 
-class UserRequestController extends Controller
+class WithdrawController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +16,8 @@ class UserRequestController extends Controller
      */
     public function index()
     {
-        $requests=UserRequest::where('type','verification')->get();
-        return view('admin.request.index',compact('requests'));
+        $requests=UserRequest::where('type','withdraw')->get();
+        return view('admin.withdraw.index',compact('requests'));
     }
 
     /**
@@ -47,10 +44,10 @@ class UserRequestController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\UserRequest  $userRequest
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(UserRequest $userRequest)
+    public function show($id)
     {
         //
     }
@@ -58,10 +55,10 @@ class UserRequestController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\UserRequest  $userRequest
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(UserRequest $userRequest)
+    public function edit($id)
     {
         //
     }
@@ -70,10 +67,10 @@ class UserRequestController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\UserRequest  $userRequest
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserRequest $userRequest)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -81,31 +78,30 @@ class UserRequestController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\UserRequest  $userRequest
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $user=UserRequest::find($id)->user->email;
-        $request=UserRequest::find($id)->delete();
-        Mail::to($user)->send(new CustomMail());
-        if($request)
-        {
-            Session::flash('deleted','Request Deleted Successfully');
-            return redirect()->route('request.index');
-        }
+        //
     }
 
     public function accept($id)
     {
-        $user=User::find($id);
-        $user->assignRole('Verified_User');
-        $request=UserRequest::where('users_id',$id)->delete();
-        if($user)
+        $request=UserRequest::find($id);
+        $user_id=$request->users_id;
+        $user=User::find($user_id);
+        $user->wallet_address=null;
+        $user->package_id=null;
+        $user->invested_amount=null;
+        $user->package_started_at=null;
+        $user->withdraw_date=null;
+        $user->update();
+        $request->delete();
+        if($request)
         {
             Session::flash('accepted','Request Accepted');
-            return redirect()->route('request.index');
+            return redirect()->route('withdraw.index');
         }
     }
 }
-

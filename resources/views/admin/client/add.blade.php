@@ -34,8 +34,8 @@
                   <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-4">
-                      <input type="email" class="form-control" id="email" placeholder="User Email" name="email">
-                      <span >
+                      <input type="email" class="form-control" id="email" placeholder="User Email" required name="email">
+                      <span style="color:red">
                       @error('email')
                       <strong>{{$message}}</strong>
                       @enderror
@@ -46,9 +46,9 @@
                   <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Investment Amount</label>
                     <div class="col-sm-4">
-                      <input type="number" class="form-control" id="amount" placeholder="Enter Amount" name="amount"
+                      <input type="number" class="form-control" id="amount" required placeholder="Enter Amount" name="amount"
                       pattern="[0-9]*">
-                      <span >
+                      <span style="color:red">
                       @error('amount')
                       <strong>{{$message}}</strong>
                       @enderror

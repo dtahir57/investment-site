@@ -70,7 +70,7 @@
 
                                 <div class="input-group form-group">
                                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="First Name" aria-describedby="basic-addon1">
+                                    <input type="text" name="name" id="name" class="form-control" required placeholder="First Name" aria-describedby="basic-addon1">
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">{{ $message }}</strong>
@@ -80,7 +80,7 @@
 
                                 <div class="input-group form-group">
                                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                    <input type="text" name="username" id="username" class="form-control" placeholder="User Name" aria-describedby="basic-addon1">
+                                    <input type="text" name="username" id="username" class="form-control" required placeholder="User Name" aria-describedby="basic-addon1">
                                     @error('username')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">{{ $message }}</strong>
@@ -90,7 +90,7 @@
 
                                 <div class="input-group form-group">
                                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+                                    <input type="email" name="email" id="email" class="form-control" required placeholder="Email" aria-describedby="basic-addon1">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">{{ $message }}</strong>
@@ -100,7 +100,7 @@
 
                                 <div class="input-group form-group">
                                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-                                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone No." aria-describedby="basic-addon1"
+                                    <input type="tel" name="phone" id="phone" class="form-control" required placeholder="Phone No." aria-describedby="basic-addon1"
                                     pattern="[0-9]*">
                                     @error('phone')
                                     <span class="invalid-feedback" role="alert">
@@ -111,7 +111,7 @@
 
                                 <div class="input-group form-group">
                                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock"></i></span>
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+                                    <input type="password" name="password" id="password" class="form-control" required placeholder="Password" aria-describedby="basic-addon1">
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">{{ $message }}</strong>
@@ -120,18 +120,8 @@
                                 </div>
                                 <div class="input-group form-group">
                                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock"></i></span>
-                                    <input type="password" name="password_confirmation" id="password-confirm" class="form-control" placeholder="Confirm Password" aria-describedby="basic-addon1">
+                                    <input type="password" name="password_confirmation" id="password-confirm" required class="form-control" placeholder="Confirm Password" aria-describedby="basic-addon1">
                                 </div>
-                                <div class="input-group form-group">
-                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-dollar"></i></span>
-                                    <input type="text" name="wallet_address" id="wallet_address" class="form-control" placeholder="Wallet Address" aria-describedby="basic-addon1">
-                                    @error('wallet_address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong style="color:red">{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                                
                                 <button type="submit" class="btn">Sign me up!</button>
                             </form>
                         </div>

@@ -237,7 +237,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('client.add')}}" class="nav-link {{(Request::is('admin/verifiedusers') ? 'active' : '')}}">
+            <a href="{{route('client.add')}}" class="nav-link {{(Request::is('admin/client/add') ? 'active' : '')}}">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Add Clent
@@ -248,7 +248,15 @@
             <a href="{{route('request.index')}}" class="nav-link {{(Request::is('admin/request') ? 'active' : '')}}" >
               <i class="nav-icon fas fa-id-card"></i>
               <p>
-                Manage Requests
+                Verification Requests
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('withdraw.index')}}" class="nav-link {{(Request::is('admin/withdraw') ? 'active' : '')}}" >
+              <i class="nav-icon fa fa-dollar-sign"></i>
+              <p>
+                WIthdraw Requests
               </p>
             </a>
           </li>
@@ -277,11 +285,8 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy;<a href="{{env('APP_URL',false)}}">Forexzone</a>.</strong>
     All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.0-rc.5
-    </div>
   </footer>
 
   <!-- Control Sidebar -->

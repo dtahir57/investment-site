@@ -113,8 +113,6 @@
 
    </form>
  
-
-
 @endsection
 @section('script')
 <script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
