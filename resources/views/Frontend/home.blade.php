@@ -84,21 +84,6 @@
                 </div>
           </div>
           @endif  
-    @elseif($user->request != null)
-          @if($user->request->type == "withdraw")
-          <div class="col-6" style="margin-left:300px">
-                <div class="card" >
-                  <div class="card-header">
-                    <h3 class="card-title">Message</h3>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                  Withdraw request sent.
-                  </div>
-                  <!-- /.card-body -->
-                </div>
-          </div>
-          @endif
     @else
      <div class="col-6" style="margin-left:300px">
           <div class="card" >
@@ -132,6 +117,22 @@
     </div>
       @endif
       <!-- /.row -->
+      @if($user->request != null)
+          @if($user->request->type == "withdraw")
+          <div class="col-6" style="margin-left:300px">
+                <div class="card" >
+                  <div class="card-header">
+                    <h3 class="card-title">Message</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                  Withdraw request sent.
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+          </div>
+          @endif
+    @endif
     </section>
 
 
