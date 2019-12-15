@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>User Dashboard</title>
+  <title>@yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -58,8 +58,12 @@
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+        <img src="{{ asset('storage/'.Auth::user()->name.'/'.Auth::user()->profile_pic) }}" alt="user-image"
+        height="150px" width="150px" style="border-radius: 50%;">
+        </div>
         <div class="info">
-          <a href="#" class="d-block">{{ $user->name }}</a>
+          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
 
@@ -73,6 +77,14 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('user.profile',Auth::user()->id)}}" class="nav-link {{(Request::is('user/profile') ? 'active' : '')}}">
+              <i class="nav-icon fas fa-id-card"></i>
+              <p>
+                Profile
               </p>
             </a>
           </li>

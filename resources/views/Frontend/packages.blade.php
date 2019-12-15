@@ -34,12 +34,7 @@
                                                     <!-- <li><strong>Basic</strong> Stats</li> -->
                                                 </ul>
                                                 <div class="pricing-signup">
-                                                    <a href="{{ route('coinbase.package1') }}" class="button color-5"
-                                                    onclick="event.preventDefault();
-                                                     document.getElementById('package1-form').submit();">Buy Now</a>
-                                                    <form id="package1-form" action="{{ route('coinbase.package1') }}" method="POST" style="display: none;">
-                                                        @csrf
-                                                    </form>
+                                                    <a href="" class="button color-5">Buy Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -66,12 +61,7 @@
                                                     <!-- <li><b>Complex</b>&nbsp;Stats</li> -->
                                                 </ul>
                                                 <div class="pricing-signup">
-                                                    <a href="{{ route('coinbase.package2') }}" class="button color-5"
-                                                    onclick="event.preventDefault();
-                                                     document.getElementById('package2-form').submit();">Buy Now</a>
-                                                    <form id="package2-form" action="{{ route('coinbase.package2') }}" method="POST" style="display: none;">
-                                                        @csrf
-                                                    </form>
+                                                    <a href="" class="button color-5">Buy Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,12 +88,7 @@
                                                     <!-- <li><b>Complex</b>&nbsp;Stats</li> -->
                                                 </ul>
                                                 <div class="pricing-signup">
-                                                    <a href="{{ route('coinbase.package3') }}" class="button color-5"
-                                                    onclick="event.preventDefault();
-                                                     document.getElementById('package3-form').submit();">Buy Now</a>
-                                                    <form id="package3-form" action="{{ route('coinbase.package3') }}" method="POST" style="display: none;">
-                                                        @csrf
-                                                    </form>
+                                                    <a href="https://commerce.coinbase.com/checkout/8d373850-4d83-4032-a3aa-e38ad7d547b1" class="button color-5">Buy Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -131,12 +116,7 @@
                                                     <!-- <li><b>Complex</b>&nbsp;Stats</li> -->
                                                 </ul>
                                                 <div class="pricing-signup">
-                                                    <a href="{{ route('coinbase.package4') }}" class="button color-5"
-                                                    onclick="event.preventDefault();
-                                                     document.getElementById('package4-form').submit();">Buy Now</a>
-                                                    <form id="package4-form" action="{{ route('coinbase.package4') }}" method="POST" style="display: none;">
-                                                        @csrf
-                                                    </form>
+                                                    <a href="https://commerce.coinbase.com/checkout/44b98546-a8de-4067-9517-21bc534221da" class="button color-5">Buy Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -161,12 +141,7 @@
                                                     <!-- <li><strong>Basic</strong> Stats</li> -->
                                                 </ul>
                                                 <div class="pricing-signup">
-                                                    <a href="{{ route('coinbase.package5') }}" class="button color-5"
-                                                    onclick="event.preventDefault();
-                                                     document.getElementById('package5-form').submit();">Buy Now</a>
-                                                    <form id="package5-form" action="{{ route('coinbase.package5') }}" method="POST" style="display: none;">
-                                                        @csrf
-                                                    </form>
+                                                    <a href="https://commerce.coinbase.com/checkout/e55b61a1-ba1e-4f35-8c3f-214f09ecdfda" class="button color-5">Buy Now</a>
                                                 </div>
                                             </div>
                                         </div>

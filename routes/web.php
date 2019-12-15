@@ -71,14 +71,11 @@ Route::group(['prefix' => '/admin', 'middleware' =>['auth','role:Super_User']], 
 
 Route::group(['middleware' =>['auth','verified']], function () {
     Route::get('/Frontend/home','Frontend\UserController@index')->name('user.dashboard');
-    Route::post('/package1', 'Admin\CoinbaseController@package1')->name('coinbase.package1');
-    Route::post('/package2', 'Admin\CoinbaseController@package2')->name('coinbase.package2');
-    Route::post('/package3', 'Admin\CoinbaseController@package3')->name('coinbase.package3');
-    Route::post('/package4', 'Admin\CoinbaseController@package4')->name('coinbase.package4');
-    Route::post('/package5', 'Admin\CoinbaseController@package5')->name('coinbase.package5');
-    Route::get('/user/profile/{id}', 'Frontend\UserController@profile')->name('frontend.user.profile');
+    Route::get('/user/profile/{id}', 'Frontend\ProfileController@index')->name('user.profile');
+    Route::patch('/user/profile/update/{id}', 'Frontend\ProfileController@update')->name('user.profile.update');
     Route::patch('/upload/{user}','Frontend\UserController@update')->name('user.upload');
     Route::patch('/withdraw/update/{user}/{address}','Frontend\UserController@withdraw')->name('user.withdraw');
+    Route::post('message','Frontend\FrontendController@message')->name('message');
 });
    
    

@@ -58,72 +58,15 @@
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>Sign up now</h3>
-                                <p>Fill in the form below to get instant access</p>
+                                <p>Please select a package and complete payment you will recieve a email with login info shortly after payment.</p>
+
                             </div>
                             <div class="form-top-right">
                                 <i class="fa fa-pencil"></i>
                             </div>
                         </div>
                         <div class="form-bottom">
-                            <form role="form" action="{{route('register')}}" method="POST" class="login-form">
-                            @csrf
-
-                                <div class="input-group form-group">
-                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                    <input type="text" name="name" id="name" class="form-control" required placeholder="First Name" aria-describedby="basic-addon1">
-                                    @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong style="color:red">{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
-                                <div class="input-group form-group">
-                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                    <input type="text" name="username" id="username" class="form-control" required placeholder="User Name" aria-describedby="basic-addon1">
-                                    @error('username')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong style="color:red">{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
-                                <div class="input-group form-group">
-                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-                                    <input type="email" name="email" id="email" class="form-control" required placeholder="Email" aria-describedby="basic-addon1">
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong style="color:red">{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
-                                <div class="input-group form-group">
-                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-                                    <input type="tel" name="phone" id="phone" class="form-control" required placeholder="Phone No." aria-describedby="basic-addon1"
-                                    pattern="[0-9]*">
-                                    @error('phone')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong style="color:red">{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
-                                <div class="input-group form-group">
-                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock"></i></span>
-                                    <input type="password" name="password" id="password" class="form-control" required placeholder="Password" aria-describedby="basic-addon1">
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong style="color:red">{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                                <div class="input-group form-group">
-                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock"></i></span>
-                                    <input type="password" name="password_confirmation" id="password-confirm" required class="form-control" placeholder="Confirm Password" aria-describedby="basic-addon1">
-                                </div>
-                                <button type="submit" class="btn">Sign me up!</button>
-                            </form>
+                            <a href="{{route('packages')}}" type="button" class="btn" style="margin-left:170px">Get your package</a>
                         </div>
                     </div>
 

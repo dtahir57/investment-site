@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Package;
+use App\Http\Requests\MessageRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MessageMail;
+use Session;
 
 class FrontendController extends Controller
 {
@@ -25,6 +29,20 @@ class FrontendController extends Controller
 	public function contact()
     {
         return view('Frontend.contact');
+	}
+
+	public function message(MessageRequest $request)
+	{
+		$details=array(
+		'name'=>$request->name,
+		'email'=>$request->email,
+		'phone'=>$request->phone,
+		'subject'=>$request->subject,
+		'message'=>$request->message,
+	);
+		Mail::to(config('mail.from.address'))->send(new MessageMail($details));
+		Session::flash('sent','Message sent');
+		return redirect()->back();
 	}
 
 	public function about()

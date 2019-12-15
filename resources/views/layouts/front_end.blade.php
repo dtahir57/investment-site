@@ -61,14 +61,11 @@
                                     {{ __('Dashboard') }}   
                                     </a>
                                 @endif
-                                    <a class="dropdown-item" href="{{ route('frontend.user.profile', Auth::user()->id) }}">
+                                @if(Auth::user()->hasRole('Verified_User'))
+                                    <a class="dropdown-item" href="{{ route('user.profile', Auth::user()->id) }}">
                                     {{ __('Profile') }}  
                                     </a>
-                                    <a class="dropdown-item" href="#">
-                                    {{ __('Setting') }}  
-                                    </a>
-                                
-                                
+                                @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -108,10 +105,10 @@
                         <h4>Useful Links</h4>
                         <hr/>
                         <ul class="footer-links">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Packages</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="{{route('main')}}">Home</a></li>
+                            <li><a href="{{route('packages')}}">Packages</a></li>
+                            <li><a href="{{route('contact')}}">Contact</a></li>
+                            <li><a href="{{route('about')}}">About Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -133,25 +130,13 @@
                         <hr/>
                         <ul class="footer-links">
                             <li>
-                                <a href="#" class="post">Lorem ipsum dolor sit amet</a>
-                                <p class="post-date">May 25, 2017</p>
+                                No recent posts
                             </li>
-                            <li>
-                                <a href="#" class="post">Lorem ipsum dolor sit amet</a>
-                                <p class="post-date">May 25, 2017</p>
-                            </li>
-                            <li>
-                                <a href="#" class="post">Lorem ipsum dolor sit amet</a>
-                                <p class="post-date">May 25, 2017</p>
-                            </li>
-
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </section>
 
     <section id="bottom-footer">
@@ -159,7 +144,6 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 btm-footer-links">
                     <a href="{{route('privacy')}}">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 copyright">
                     All rights reserved by <a href="#">Forexzone Investment Company</a>

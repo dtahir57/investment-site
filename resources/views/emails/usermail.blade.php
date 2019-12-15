@@ -140,56 +140,27 @@
 
 <body class="respond" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
     <!-- header -->
-    <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="ffffff">
-            <tr>
-            <td align="center">
-                <table border="0" align="center" width="590" cellpadding="0" cellspacing="0" class="container590">
-
-                            <tr>
-                                <td align="center" height="70" style="height:70px;">
-                                    <a href="{{route('main')}}" style="display: block; border-style: none !important; border: 0 !important;"><img width="100" border="0" style="display: block; width: 100px;" src="http://forexzone.org/img/logo.png" alt="" /></a>
-                                </td>
-                            </tr>
-                </table>
-            </td>
-            </tr>
-    </table>
-    <!-- end header -->
-
-    <!-- big image section -->
 
     <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="ffffff" class="bg_color">
 
         <tr>
-            <td align="center">
-                <table border="0" align="center" width="590" cellpadding="0" cellspacing="0" class="container590">
+            <td>
+                <table border="0"  width="590" cellpadding="0" cellspacing="0" class="container590">
                     <tr>
                         <td align="left">
-                            <table border="0" width="590" align="center" cellpadding="0" cellspacing="0" class="container590">
+                            <table border="0" width="590" cellpadding="0" cellspacing="0" class="container590">
                                 <tr>
                                     <td align="left" style="color: #888888; font-size: 16px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;">
                                         <!-- section text ======-->
                                         <p style="line-height: 24px;margin-bottom:15px;">
-                                            You can Login using: <br>
-                                            <span>Email:</span>{{$details['email']}}<br>
-                                            <span>Password:</span>{{$details['password']}}<br>
+                                            <strong>User Email: </strong>{{$details['email']}}<br>
+                                            <strong>Phone: </strong>{{$details['phone']}}<br>
+                                            <strong>Message: </strong>{{$details['message']}}<br>
                                         </p>
                                         <p style="line-height: 24px">
                                             REGARDS,<br>
-                                            {{ config('app.name') }}
+                                            {{ucfirst($details['name'])}}
                                         </p>
-
-                                        <table border="0" align="center" width="180" cellpadding="0" cellspacing="0" bgcolor="5caad2" style="margin-bottom:20px;">
-                                            <tr>
-                                                <td align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">
-                                                    <!-- main section button -->
-
-                                                    <div style="line-height: 22px;">
-                                                        <a href="{{route('login')}}" style="color: #ffffff; text-decoration: none;">LOGIN</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
                                     </td>
                                 </tr>
                             </table>

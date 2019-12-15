@@ -23,38 +23,63 @@
     <section id="contact-page">
         <div class="container">
             <div class="section-heading text-center">
+                @if(session('sent'))
+                <li class="alert alert-success">{{ session('sent') }}</li>
+                @endif
                 <h2>Drop your <span>Message</span></h2>
                 <p class="subheading">Hello! We know you have questions' send in all your inquiries and complaints and we would gladly reply back within 24-48 hours of receiving your request . Be rest assured we are always available</p>
             </div>
             <div class="row contact-wrap">
                 <div class="status alert alert-success" style="display: none"></div>
-                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="{{route('message')}}">
+                @csrf
                     <div class="col-sm-5 col-sm-offset-1">
                         <div class="form-group">
-                            <label>Name *</label>
-                            <input type="text" name="name" class="form-control" required="required">
+                            <label>Name</label>
+                            <input type="text" name="name" required class="form-control">
+                            <span style="color:red">
+                            @error('name')
+                            <strong>{{$message}}</strong>
+                            @enderror
+                            </span>
                         </div>
                         <div class="form-group">
-                            <label>Email *</label>
-                            <input type="email" name="email" class="form-control" required="required">
+                            <label>Email</label>
+                            <input type="email" name="email" required class="form-control">
+                            <span style="color:red">
+                            @error('email')
+                            <strong>{{$message}}</strong>
+                            @enderror
+                            </span>
                         </div>
                         <div class="form-group">
                             <label>Phone</label>
-                            <input type="number" class="form-control">
+                            <input type="number" name="phone" required class="form-control">
+                            <span style="color:red">
+                            @error('phone')
+                            <strong>{{$message}}</strong>
+                            @enderror
+                            </span>
                         </div>
                         <div class="form-group">
-                            <label>Company Name</label>
-                            <input type="text" class="form-control">
+                            <label>Subject</label>
+                            <input type="text" name="subject" required class="form-control">
+                            <span style="color:red">
+                            @error('subject')
+                            <strong>{{$message}}</strong>
+                            @enderror
+                            </span>
                         </div>
                     </div>
                     <div class="col-sm-5">
                         <div class="form-group">
-                            <label>Subject *</label>
-                            <input type="text" name="subject" class="form-control" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label>Message *</label>
-                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                            <label>Message</label>
+                            <textarea name="message" id="message" required class="form-control" rows="8"></textarea>
+                            <span style="color:red">
+                            @error('message')
+                            <strong>{{$message}}</strong>
+                            @enderror
+                            </span>
                         </div>
                         <div class="form-group">
                             <button type="submit" name="submit" class="btn btn-default submit-button">Submit Message <i class="fa fa-caret-right"></i></button>

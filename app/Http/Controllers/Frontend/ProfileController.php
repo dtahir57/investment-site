@@ -1,25 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Coinbase\Wallet\Client;
-use Coinbase\Wallet\Configuration;
-use Coinbase\Wallet\Enum\CurrencyCode;
-use Coinbase\Wallet\Resource\Transaction;
-use Coinbase\Wallet\Value\Money;
+use App\Http\Requests\ProfileRequest;
+use App\Http\Requests\UserprofileRequest;
+use Auth;
+use Session;
+use App\User;
 
-class CoinbaseController extends Controller
+class ProfileController extends Controller
 {
-    protected $apiKey, $apiSecret, $configuration, $client;
-
     public function __construct()
     {
-        $this->apiKey = config('app.coinbase_api_key');
-        $this->apiSecret = config('app.coinbase_secret_key');
-        $this->configuration = Configuration::apiKey($this->apiKey, $this->apiSecret);
-        $this->client = Client::create($this->configuration);
+         $this->middleware(['auth','verified']);
     }
     /**
      * Display a listing of the resource.
@@ -28,8 +23,8 @@ class CoinbaseController extends Controller
      */
     public function index()
     {
-        $paymentMethods = $this->client->getPaymentMethods();
-        dd($paymentMethods);
+        $user = Auth::user();
+        return view('Frontend.user.index', compact('user'));
     }
 
     /**
@@ -82,9 +77,21 @@ class CoinbaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProfileRequest $request, $id)
     {
-        //
+        $user=User::find($id);
+        $user->name=$request->name;
+        $user->username=$request->username;
+        $user->phone=$request->phone;
+        $filename=sprintf('image_%s.png',random_int(1,1000000));
+        $request->file('image')->storeAs($user->name,$filename,'public');
+        $user->profile_pic=$filename;
+        $user->update();
+        if($user)
+        {
+            Session::flash('updated','Profile Updated Successfully');
+            return redirect()->back();
+        }
     }
 
     /**
@@ -98,24 +105,4 @@ class CoinbaseController extends Controller
         //
     }
 
-    public function package1(Request $request)
-    {
-        // 
-    }
-    public function package2(Request $request)
-    {
-        // 
-    }
-    public function package3(Request $request)
-    {
-        // 
-    }
-    public function package4(Request $request)
-    {
-        // 
-    }
-    public function package5(Request $request)
-    {
-        // 
-    }
 }

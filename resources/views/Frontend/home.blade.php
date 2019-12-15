@@ -2,19 +2,21 @@
 @section('title', 'User Dashboard')
 @section('content')
 
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
+<div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2"> 
-          <div class="col-md-12">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('user.dashboard')}}">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
-          </div>
-        
+          </div><!-- /.col -->
+        </div><!-- /.row -->
       </div><!-- /.container-fluid -->
-    </section>
+</div>
     @if(session('withdraw'))
                <li class="alert alert-success">{{ session('withdraw') }}</li>
     @endif
@@ -51,7 +53,6 @@
              <span><b>Name: </b></span>{{$user->name}}<br>
              <span><b>Email: </b></span>{{$user->email}}<br>
              <span><b>Invested Amount: </b></span>{{$user->invested_amount}}<strong>$</strong><br>
-             <span><b>Wallet Address: </b></span>{{$user->wallet_address}}<br>
              <!-- JLpl3x -->
             </div>
           </div>
@@ -62,8 +63,14 @@
                 data-id="{{$user->id}}" base-url="{{env('APP_URL',false)}}" data-url="/withdraw/update">Withdraw</button>
                 </div>
           @endif
-                <!-- /.card-footer -->
+        @elseif($date != $user->withdraw_date)
+          @if($user->request == null)
+                <div class="card-footer">
+                <button class="btn btn-primary float-right" style="opacity:0.4">Withdraw</button>
+                </div>
+          @endif
         @endif
+                <!-- /.card-footer -->
             <!-- /.card-body -->
           </div>
           <!-- /.card -->

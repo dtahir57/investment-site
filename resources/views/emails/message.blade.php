@@ -147,7 +147,7 @@
 
                             <tr>
                                 <td align="center" height="70" style="height:70px;">
-                                    <a href="{{env('APP_URL',false)}}" style="display: block; border-style: none !important; border: 0 !important;"><img width="100" border="0" style="display: block; width: 100px;" src="http://forexzone.org/img/logo.png" alt="" /></a>
+                                    <a href="{{route('main')}}" style="display: block; border-style: none !important; border: 0 !important;"><img width="100" border="0" style="display: block; width: 100px;" src="http://forexzone.org/img/logo.png" alt="" /></a>
                                 </td>
                             </tr>
                 </table>
@@ -184,7 +184,7 @@
                                                     <!-- main section button -->
 
                                                     <div style="line-height: 22px;">
-                                                        <a href="{{env('APP_URL',false).'/'.'login'}}" style="color: #ffffff; text-decoration: none;">LOGIN</a>
+                                                        <a href="{{route('login')}}" style="color: #ffffff; text-decoration: none;">LOGIN</a>
                                                     </div>
                                                 </td>
                                             </tr>
