@@ -20,7 +20,7 @@
                 </div>
                     <div class="section-heading">
                         <h2>Sign In With <span>Us</span></h2>
-                        <p class="subheading">Hello! Welcome back to Forexzone we happy to have you back : Kindly fill in your details to access your profile area.</p>
+                        <p class="subheading">Hello! Welcome back to Forexzone WE ARE HAPPY to have you back : Kindly fill in your details to access your profile area.</p>
                     </div>
                     <div class="row">
                         <div class="col-xs-2 icon"><i class="fa fa-bullhorn"></i></div>

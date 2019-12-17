@@ -40,7 +40,7 @@
 
                          WELCOME TO THE MOST LUCRATIVE TRADING PLATFORM ONLINE.
                     </p>
-                    <button type="button" class="btn btn-primary slide">Learn More <i class="fa fa-caret-right"></i></button>
+                    <a type="button" class="btn btn-primary slide" href="{{route('contact')}}"> <i class="fa">Learn More</i> <i class="fa fa-caret-right"></i></a>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
                     <img height="" width="auto" src="{{asset('Frontend/img/iphone62.png')}}" class="attachment-full img-responsive" alt="">

@@ -35,7 +35,7 @@ class PackageSeeder extends Seeder
         $package = new Package;
         $package->package_name = 'FOREX ACCOUNT MANAGEMENT';
         $package->price = 500;
-        $package->renewal_time = 'per six months';
+        $package->renewal_time = 'per three months';
         $package->package_type = 3;
         $package->min_investment = 1000;
         $package->max_investment = 10000;

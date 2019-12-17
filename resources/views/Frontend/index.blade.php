@@ -17,8 +17,7 @@
                     <h1 class="banner_heading">Welcome To <span>Forexzone </span></h1>
                     <p class="banner_txt">Forexzone is an online investment trading company with a vast trading experience in wealth optimization. Ever desired to trade in the financial market known as the forex market?.</p>
                     <div class="slider_btn">
-                        <button type="button" class="btn btn-default slide">Learn More <i class="fa fa-caret-right"></i></button>
-                       
+                        <a type="button"class="btn btn-default slide" href="{{route('contact')}}">Learn More <i class="fa fa-caret-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -29,8 +28,7 @@
                     <h1 class="banner_heading">Welcome To <span>Forexzone </span></h1>
                     <p class="banner_txt">Forexzone is an online investment trading company with a vast trading experience in wealth optimization. Ever desired to trade in the financial market known as the forex market?.</p>
                     <div class="slider_btn">
-                        <button type="button" class="btn btn-default slide">Learn More <i class="fa fa-caret-right"></i></button>
-                       
+                    <a type="button"class="btn btn-default slide" href="{{route('contact')}}">Learn More <i class="fa fa-caret-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -41,8 +39,7 @@
                     <h1 class="banner_heading">Welcome To <span>Forexzone </span></h1>
                     <p class="banner_txt">Forexzone is an online investment trading company with a vast trading experience in wealth optimization. Ever desired to trade in the financial market known as the forex market?.</p>
                     <div class="slider_btn">
-                        <button type="button" class="btn btn-default slide">Learn More <i class="fa fa-caret-right"></i></button>
-                       
+                    <a type="button"class="btn btn-default slide" href="{{route('contact')}}">Learn More <i class="fa fa-caret-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -119,9 +116,7 @@
                         <li> <i class="fa fa-check"></i>WE PROVIDE SIGNALS FOR ALL OUR ESTEEMED INVESTORS .</li>
                         <li> <i class="fa fa-check"></i>WELCOME TO THE MOST LUCRATIVE TRADING PLATFORM ONLINE.</li>
                     </ul>
-
-                    <button type="button" class="btn btn-primary slide">Learn More  <i class="fa fa-caret-right"></i> </button>
-
+                    <a type="button" class="btn btn-primary slide" href="{{route('contact')}}"><i class="fa"> Learn More </i><i class="fa fa-caret-right"></i></a>
 
                 </div>
             </div>
@@ -151,7 +146,7 @@ We engage in various daily trades which effect the profits shared with our inves
 
                     <div class="process-text-block">
                         <h4><a href="#">Idea</a></h4>
-                        <p>ForexZone as a fast growing training/trading company,we believe in  creating wealth via the Foreign exchange market and binary trading to serve as an extra source of income.Forexzone brings you the opportunity to learn and also earn.</p>
+                        <p>ForexZone is a fast growing training/trading company,we believe in  creating wealth via the Foreign exchange market and binary trading to serve as an extra source of income.Forexzone brings you the opportunity to learn and also earn.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 block process-block">
@@ -244,10 +239,7 @@ We engage in various daily trades which effect the profits shared with our inves
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
     </section>
     @endsection

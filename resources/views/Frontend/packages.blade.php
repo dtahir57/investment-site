@@ -8,7 +8,7 @@
                 <div class="col span_12">
                     <div class="col-sm-12 wpb_column column_container">
                         <div class="wpb_wrapper">
-                            <div class="section-heading text-center">
+                            <div class="section-heading text-center change">
                                 <h1>Our <span>Plans</span></h1>
                                 <p class="subheading">OUR PLANS ARE FLEXIBLE : FOR THOSE WHO WOULD LIKE TO ENGAGE IN OUR INVESTMENT PLATFORM PRIOR TO WHEN THEY START TRADING  INDEPENDENTLY,THESE ARE THE PERCENTAGE PROFITS WE OFFER FROM THE FOREX/BINARY MARKET .</p>
                             </div>
@@ -34,7 +34,7 @@
                                                     <!-- <li><strong>Basic</strong> Stats</li> -->
                                                 </ul>
                                                 <div class="pricing-signup">
-                                                    <a href="" class="button color-5">Buy Now</a>
+                                                    <a href="https://commerce.coinbase.com/checkout/3f1001d4-1ef3-4194-a5da-bd9e32726a5d" class="button color-5">Buy Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -61,7 +61,7 @@
                                                     <!-- <li><b>Complex</b>&nbsp;Stats</li> -->
                                                 </ul>
                                                 <div class="pricing-signup">
-                                                    <a href="" class="button color-5">Buy Now</a>
+                                                    <a href="https://commerce.coinbase.com/checkout/8a01b191-3c2d-4c50-bdee-8661497772a6" class="button color-5">Buy Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -76,7 +76,7 @@
                                                     <!-- <h3>Forex Account Management</h3> -->
                                                     <div class="pricing-price">
                                                         <span class="pricing-amount">$500</span>
-                                                        <span class="pricing-per">per six months</span>
+                                                        <span class="pricing-per">per three months</span>
                                                     </div>
                                                 </div>
                                                 <ul>

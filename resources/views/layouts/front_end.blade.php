@@ -92,16 +92,6 @@
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-12 block">
                     <div class="footer-block">
-                        <h4>Address</h4>
-                        <hr/>
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.
-                        </p>
-                        <a href="#" class="learnmore">Learn More <i class="fa fa-caret-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-3 col-xs-12 block">
-                    <div class="footer-block">
                         <h4>Useful Links</h4>
                         <hr/>
                         <ul class="footer-links">
@@ -124,7 +114,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 <block></block>">
+                <div class="col-md-3 col-sm-3 col-xs-12 block">
                     <div class="footer-block">
                         <h4>Recent Posts</h4>
                         <hr/>
@@ -132,6 +122,19 @@
                             <li>
                                 No recent posts
                             </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-3 col-xs-12 block">
+                    <div class="footer-block">
+                        <h4>Find us on</h4>
+                        <hr/>
+                        <ul class="footer-links" style="margin-top:-10px">
+                            <a href="https://www.instagram.com/invites/contact/?i=xaf4dsv5gtdk&utm_content=c2l35wf"><img src="{{asset('frontend/img/insta.png')}}" style="width:12%;height:12%" alt="Instagram Logo PNG Icon Transparent @transparentpng.com"></a>
+                            &nbsp &nbsp<a href="https://m.facebook.com/Forexzonehub-111334363695689/?ref=bookmarks"><img src="{{asset('frontend/img/facebook.png')}}" style="width:12%;height:12%" alt="Facebook"></a>
+                            &nbsp &nbsp<a href="https://t.me/Officialforexzone"><img src="{{asset('frontend/img/telegram.png')}}" style="width:12%;height:13%;margin-top:2%" alt="Telegram"></a>
+                            &nbsp &nbsp &nbsp<a href="http://www.linkedin.com/in/forex-zone"><img src="{{asset('frontend/img/linkedin.png')}}" style="width:12%;height:12%" alt="Facebook"></a>
                         </ul>
                     </div>
                 </div>

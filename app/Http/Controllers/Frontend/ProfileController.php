@@ -84,7 +84,9 @@ class ProfileController extends Controller
         $user->username=$request->username;
         $user->phone=$request->phone;
         $filename=sprintf('image_%s.png',random_int(1,1000000));
-        $request->file('image')->storeAs($user->name,$filename,'public');
+        $image=$request->file('image');
+        $destination_path=public_path('/profiles'.'/'.$user->username);
+        $image->move($destination_path,$filename);
         $user->profile_pic=$filename;
         $user->update();
         if($user)

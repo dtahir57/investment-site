@@ -76,8 +76,10 @@ class UserController extends Controller
     {
 
         $user=User::find($id);
-        $filename=sprintf('image_%s.png',random_int(1,10000));
-        $request->file('image')->storeAs($user->name,$filename,'public');
+        $filename=sprintf('image_%s%s.png',random_int(1,10000),random_int(1,10000));
+        $image=$request->file('image');
+        $destination_path=public_path('/verification');
+        $image->move($destination_path,$filename);
         $user->image_name=$filename;
         $user->update();
         $request=new UserRequest;

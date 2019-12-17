@@ -59,7 +59,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-        <img src="{{ asset('storage/'.Auth::user()->name.'/'.Auth::user()->profile_pic) }}" alt="user-image"
+        <img src="{{env('APP_URL')}}/profiles/{{(Auth::user()->username)}}/{{Auth::user()->profile_pic}}" alt="user-image"
         height="150px" width="150px" style="border-radius: 50%;">
         </div>
         <div class="info">

@@ -25,15 +25,18 @@ $(window).scroll(function() {
 
     if ($(this).scrollTop() > 50) {
         $('header').addClass("sticky");
-        $('body').css("padding-top","60px");
-    } 
+        $('body').css("margin-top","4%");
+        $('.change').css("margin-top",'6%');
+    }
 });
 
 $('.scroll').click(function()
 {
     $('header').addClass("sticky");
-    $('body').css("padding-top","60px");
+    $('body').css("margin-top","4%");
+    $('.change').css("margin-top",'6%');
 });
+
 function toggleIcon(e) {
     $(e.target)
         .prev('.panel-heading')

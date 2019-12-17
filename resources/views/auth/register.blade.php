@@ -66,7 +66,7 @@
                             </div>
                         </div>
                         <div class="form-bottom">
-                            <a href="{{route('packages')}}" type="button" class="btn" style="margin-left:170px">Get your package</a>
+                            <a href="{{route('packages')}}" type="submit" class="btn">Get your package</a>
                         </div>
                     </div>
 
