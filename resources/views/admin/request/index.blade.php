@@ -52,7 +52,7 @@
                   <tr>
                     <td>{{$request->user->name}}</td>
                     <td>{{$request->user->email}}</td>
-                    <td><img src="http://localhost:8000/verification/{{$request->user->image_name}}" height="200px" width="200px"/></td>
+                    <td><img src="{{asset('verification/'.$request->user->image_name)}}" height="200px" width="200px"/></td>
                     <td> 
                     <a href="{{route('request.accept',$request->user->id)}}" type="button" class="btn btn-sm btn-success">Accept</a>
                     <button type="button"  class="btn btn-danger remove-record btn-sm" data-toggle="modal" data-target="#modal-danger"

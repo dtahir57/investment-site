@@ -184,7 +184,7 @@
                                                     <!-- main section button -->
 
                                                     <div style="line-height: 22px;">
-                                                        <a href="{{route('login')}}" style="color: #ffffff; text-decoration: none;">LOGIN</a>
+                                                        <a href="{{route('main')}}" style="color: #ffffff; text-decoration: none;">LOGIN</a>
                                                     </div>
                                                 </td>
                                             </tr>

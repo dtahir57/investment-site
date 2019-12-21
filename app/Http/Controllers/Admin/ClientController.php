@@ -85,7 +85,8 @@ class ClientController extends Controller
                 'email'=>$request->email,
                 'password'=>$password,
             );
-            Mail::to($request->email)->send(new UserMail($details));
+            $email=$request->email;
+            Mail::to($email)->send(new UserMail($details));
             if($user)
             {
                 Session::flash('added','User added Successfully');

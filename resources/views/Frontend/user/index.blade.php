@@ -27,7 +27,7 @@
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
-                <img  src="{{env('APP_URL')}}/profiles/{{($user->username)}}/{{$user->profile_pic}}" height="150px" width="150px" style="border-radius: 50%;"/>
+                    <img src="{{asset('profiles/'.$user->username.'/'.$user->profile_pic)}}" height="150px" width="150px" style="border-radius: 50%;"/>
                 </div>
                 <h3 class="profile-username text-center">{{ucfirst($user->name)}}</h3>
                 

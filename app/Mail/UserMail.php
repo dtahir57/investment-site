@@ -27,9 +27,9 @@ class UserMail extends Mailable
      *
      * @return $this
      */
-        public function build()
+      public function build()
     {
-        return $this->subject('Login Details')
+        return $this->subject('Details')
         ->view('emails.details');
     }
     

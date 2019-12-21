@@ -1,4 +1,4 @@
-@extends('layouts.user_app')
+[@extends('layouts.user_app')
 @section('title', 'User Dashboard')
 @section('content')
 
@@ -37,6 +37,7 @@
              <span><b>Net Profit: </b></span>{{$user->package->net_profit}}<br>
              <span><b>Renewal Time: </b></span>{{$user->package->renewal_time}}<br>
              <span><b>Referral Bonus: </b></span>{{$user->package->referral_bonus}}<br>
+             <span><b>Withdrawal Date: </b></span>{{$user->withdraw_date}}<br>
             @else
             <span><b>No package bought yet</b></span>
             @endif
