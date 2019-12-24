@@ -63,6 +63,9 @@ Route::group(['prefix' => '/admin', 'middleware' =>['auth','role:Super_User']], 
      * Starting Routes For Subscriptions
      */
     Route::get('subscriptions', 'Admin\SubscriptionController@index')->name('subscription.index');
+
+    Route::get('renew','Admin\RenewPackageController@index')->name('renew.index');
+    Route::patch('client/update/{user}','Admin\RenewPackageController@update')->name('client.update');
     
     /**
      * Ending Routes For Subscription

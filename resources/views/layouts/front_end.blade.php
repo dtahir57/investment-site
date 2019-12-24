@@ -90,6 +90,20 @@
     <section id="footer">
         <div class="container">
             <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 block">
+                    <div class="footer-block">
+                        <h4>Address</h4>
+                        <hr/>
+                        <ul class="footer-links">
+                           <p>For inquiries and support contact us at,</p>
+                           <p>Forbes Street,SEL Glasgow UK</p>
+                           <p><strong>Email us: </strong><a href="mailto:support@forexzone.org">support@forexzone.org</a></p>
+                           <p> <strong>Hotline: </strong><span>+441415360017</span></p>
+                           <p></p>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="col-md-3 col-sm-3 col-xs-12 block">
                     <div class="footer-block">
                         <h4>Useful Links</h4>

@@ -57,7 +57,7 @@
              <!-- JLpl3x -->
             </div>
           </div>
-        @if($date == $user->withdraw_date)
+        @if($date == $user->package_started_at)
           @if($user->request == null)
                 <div class="card-footer">
                 <button type="button"  class="btn btn-primary float-right" id="wallet" data-toggle="modal" data-target="#modal-primary"

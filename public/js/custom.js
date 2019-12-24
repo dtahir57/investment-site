@@ -11,4 +11,5 @@ $(document).ready(function()
     {
         $('body').find('.form').find("input").remove();
     });
+
 });

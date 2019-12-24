@@ -25,16 +25,20 @@ $(window).scroll(function() {
 
     if ($(this).scrollTop() > 50) {
         $('header').addClass("sticky");
-        $('body').css("margin-top","4%");
-        $('.change').css("margin-top",'6%');
+    }
+    else
+    {
+        $('header').removeClass("sticky");
     }
 });
 
 $('.scroll').click(function()
 {
-    $('header').addClass("sticky");
-    $('body').css("margin-top","4%");
-    $('.change').css("margin-top",'6%');
+    if ($(this).scrollTop() == 0 ) {
+        $('header').addClass("sticky");
+    }
+    
+    
 });
 
 function toggleIcon(e) {
